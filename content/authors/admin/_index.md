@@ -6,7 +6,7 @@ title: 신서현
 superuser: true
 
 # Role/position
-role: ''
+role: Jr.Developer
 
 # Status emoji
 status:
