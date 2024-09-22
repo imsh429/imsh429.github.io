@@ -48,9 +48,9 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/imsh429
-  - icon: instagram
+  - icon: discord
     icon_pack: fab
-    link: https://instagram.com/geocushen
+    link: https://discord.com/users/1282685152795033673
 # Uncomment below for Github link
 #- icon: github
 #  icon_pack: fab
