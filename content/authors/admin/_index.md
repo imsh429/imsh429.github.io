@@ -13,7 +13,7 @@ status:
   icon: 🐰
 
 # Organizations/Affiliations
-#organizations:
+organizations: Jeonbuk National University
 #- name: 腾讯
 #  url: ""
 
