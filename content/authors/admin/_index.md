@@ -44,7 +44,7 @@ bio: My research interests include distributed robotics, mobile computing and pr
 social:
   - icon: envelope
     icon_pack: fas
-    link: "mailto:sh99429@naver.com" # For a direct email link, use "mailto:test@example.org".
+    link: mailto:sh99429@naver.com # For a direct email link, use "mailto:test@example.org".
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/wowchemy
