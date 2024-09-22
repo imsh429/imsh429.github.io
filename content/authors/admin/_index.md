@@ -13,8 +13,8 @@ status:
   icon: 🐰
 
 # Organizations/Affiliations
-organizations: Jeonbuk National University
-#- name: 腾讯
+organizations:
+- name: Jeonbuk National University
   url: https://www.jbnu.ac.kr/kor/
 
 # Short bio (displayed in user profile at end of posts)
