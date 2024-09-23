@@ -6,7 +6,7 @@
 # Appearance
 
 appearance:
-  theme_day: blue
+  theme_day: custom
   theme_night: custom
   font: minimal
   font_size: L
@@ -34,7 +34,7 @@ marketing:
 header:
   navbar:
     enable: true
-    align: r
+    align: center
     show_logo: false
     show_language: true
     show_day_night: true
