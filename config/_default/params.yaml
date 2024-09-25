@@ -34,7 +34,7 @@ marketing:
 header:
   navbar:
     enable: true
-    align: center
+    align: "center"
     show_logo: false
     show_language: true
     show_day_night: true
