@@ -8,10 +8,12 @@ main:
     url: /
     weight: 10
   - name: profile
+    identifier: profile
     url: about/
     weight: 20
   - name: introduction
-    url: /
+    parent: profile
+    url: about/introduction/
     weight: 1
   - name: projects
     url: about/
