@@ -16,7 +16,7 @@ main:
     url: about/introduction/
     weight: 1
     name: interests
-    parent: prifile
+    parent: profile
     url: about/introduction/interests
     weight: 2
   - name: projects
