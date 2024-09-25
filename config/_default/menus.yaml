@@ -18,7 +18,7 @@ main:
     name: interests
     parent: profile
     url: about/interests/
-    weight: 20
+    weight: 10
   - name: projects
     url: project/
     weight: 30
