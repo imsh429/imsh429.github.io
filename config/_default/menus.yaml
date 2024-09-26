@@ -9,7 +9,7 @@ main:
     weight: 10
   - name: profile
     identifier: profile
-    url: profile/
+    # url: profile/
     weight: 20
   - name: introduction
     parent: profile
