@@ -9,20 +9,20 @@ main:
     weight: 10
   - name: profile
     identifier: profile
-    url: about/
+    url: profile/
     weight: 20
   - name: introduction
     parent: profile
-    url: introduction/
-    weight: 30
+    url: profile/introduction
+    weight: 1
     name: interests
     parent: profile
-    url: introduction/
-    weight: 40
+    url: profile/interests
+    weight: 2
   - name: projects
     url: project/
-    weight: 50
+    weight: 30
   - name: contact
     url: about/
-    weight: 60
+    weight: 40
     
