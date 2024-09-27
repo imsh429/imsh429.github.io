@@ -8,15 +8,15 @@ main:
     url: /
     weight: 10
   - name: profile
-    identifier: profile
+    identifier: profiles
     # url: profile/
     weight: 20
-  - name: introduction
-    parent: profile
+    name: introduction
+    parent: profiles
     url: profile/introduction/
     weight: 1
     name: interests
-    parent: profile
+    parent: profiles
     url: profile/interests/
     weight: 2
   - name: projects
