@@ -37,6 +37,7 @@ header:
     align: "center"
     show_logo: false
     show_language: true
+    show_translations: true
     show_day_night: true
     show_search: true
     highlight_active_link: false
@@ -49,7 +50,6 @@ footer:
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
-
 # Localization
 
 locale:
@@ -95,7 +95,7 @@ features:
       index_name: ''
       show_logo: true
   map:
-    provider: ''
+    provider: 'mapnik'
     api_key: ''
     zoom: 15
 
