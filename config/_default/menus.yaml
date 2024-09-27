@@ -11,11 +11,11 @@ main:
     identifier: profiles
     # url: profile/
     weight: 20
-    name: introduction
+  - name: introduction
     parent: profiles
     url: profile/introduction/
     weight: 1
-    name: interests
+  - name: interests
     parent: profiles
     url: profile/interests/
     weight: 2
