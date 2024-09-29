@@ -13,7 +13,7 @@ main:
     weight: 20
   - name: introduction
     parent: profiles
-    url: profile/
+    url: about/
     weight: 10
   - name: interests
     parent: profiles
