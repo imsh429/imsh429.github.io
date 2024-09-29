@@ -14,6 +14,7 @@ content:
     netlify:
       # Enable CAPTCHA challenge to reduce spam?
       captcha: false
-      
+
 design:
   columns: '1'      
+---  
