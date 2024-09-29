@@ -23,6 +23,6 @@ main:
     url: project/
     weight: 30
   - name: contact
-    url: contact/
+    url: content/contact/
     weight: 40
     
