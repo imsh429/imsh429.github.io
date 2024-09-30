@@ -1,48 +1,62 @@
 ---
-# An instance of the Experience widget.
-# Documentation: https://docs.hugoblox.com/page-builder/
-widget: experience
+title: About Me
+type: landing
 
-# This file represents a page section.
-headless: true
+sections:
+  - block: about
+    content:
+      title: "About Me"
+      text: |-
+        I am a computer science enthusiast with a background in artificial intelligence. I enjoy solving complex problems and creating solutions that make a difference.
+      image: "/images/your-profile-image.jpg"  # 프로필 사진 경로
 
-# Order that this section appears on the page.
-weight: 30
+  - block: education
+    content:
+      title: "Education"
+      items:
+        - degree: "Bachelor of Science in Computer Science"
+          institution: "Jeonbuk National University"
+          period: "2018 - 2022"
+        - degree: "Master of Science in Artificial Intelligence (Expected)"
+          institution: "Jeonbuk National University"
+          period: "2023 - Present"
 
-title: Education
-subtitle:
+  - block: interests
+    content:
+      title: "Interests"
+      items:
+        - "Artificial Intelligence and Machine Learning"
+        - "Web Development"
+        - "Data Science and Analytics"
+        - "Open Source Contribution"
+        - "Gaming and Game Development"
 
-# Date format for experience
-#   Refer to https://docs.hugoblox.com/customization/#date-format
-date_format: Jan 2006
+  - block: skills
+    content:
+      title: "Skills"
+      items:
+        - "Java, C, C++, Python"
+        - "Hugoblox, Web Development"
+        - "Data Structures and Algorithms"
+        - "Version Control (Git)"
+        - "Cloud Platforms (AWS, Azure)"
 
-# Experiences.
-#   Add/remove as many `experience` items below as you like.
-#   Required fields are `title`, `company`, and `date_start`.
-#   Leave `date_end` empty if it's your current employer.
-#   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-experience:
-  - title: MEng Electronic Engineering
-    company: University X
-    company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2021-01-01'
-    date_end: '2022-01-01'
-    description: |2-
-        * Dissertation on Y
-        * Basketball team
-        * DJ club
+  - block: experience
+    content:
+      title: "Experience"
+      items:
+        - position: "Junior Developer"
+          company: "Tech Company"
+          period: "2022 - Present"
+          description: "Developing web applications and contributing to various projects using Java and Python."
 
-  - title: BEng Electronic Engineering
-    company: University X
-    company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: My dissertation was on X
-
-design:
-  columns: '1'
+  - block: contact
+    content:
+      title: "Get in Touch"
+      email: sh99429@naver.com
+      phone: "123-456-7890"
+      form:
+        provider: netlify  # Contact form if needed
+    design:
+      columns: '2'
 ---
