@@ -34,10 +34,9 @@ marketing:
 header:
   navbar:
     enable: true
-    align: "center"
-    show_logo: false
+    align: c
+    show_logo: true
     show_language: true
-    # show_translations: true #내가 따로 추가함
     show_day_night: true
     show_search: true
     highlight_active_link: false
