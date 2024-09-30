@@ -3,13 +3,6 @@ title: About Me
 type: landing
 
 sections:
-  - block: about
-    content:
-      title: "About Me"
-      text: |-
-        I am a computer science enthusiast with a background in artificial intelligence. I enjoy solving complex problems and creating solutions that make a difference.
-      image: "/images/your-profile-image.jpg"  # 프로필 사진 경로
-
   - block: education
     content:
       title: "Education"
