@@ -16,21 +16,20 @@ sections:
       title: "Contact Us"
       text: |-
         Feel free to contact us via the form or through any of the following methods:
-      email: contact@example.com
+      email: sh99429@naver.com
       phone: "123-456-7890"
       address:
-        street: "450 Serra Mall"
-        city: Stanford
-        region: CA
-        postcode: "94305"
-        country: United States
-        country_code: US
+        street: "567 Baekje-daero"
+        city: Jeonju-si
+        region: Jeollabuk-do
+        postcode: "54896"
+        country: South Korea
+        country_code: KR
       coordinates:
-        latitude: '37.4275'
-        longitude: '-122.1697'
+        latitude: '35.8469'
+        longitude: '127.1296'
       form:
         provider: netlify
     design:
       columns: '2'
-
 ---
