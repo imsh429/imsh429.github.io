@@ -33,12 +33,4 @@ sections:
     design:
       columns: '2'
 
-  - block: map
-    content:
-      title: "Our Location"
-      coordinates:
-        latitude: '37.4275'
-        longitude: '-122.1697'
-    design:
-      columns: '1'
 ---
