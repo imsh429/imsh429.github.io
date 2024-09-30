@@ -22,7 +22,10 @@ main:
   - name: projects
     url: project/
     weight: 30
+  - name: notice
+    url: notice/
+    weight: 40
   - name: contact
     url: contact/
-    weight: 40
+    weight: 50
     

@@ -13,9 +13,7 @@ sections:
   
   - block: contact
     content:
-      title: "Contact Us"
-      text: |-
-        Feel free to contact us via the form or through any of the following methods:
+      title: "Contact"
       email: sh99429@naver.com
       phone: "123-456-7890"
       address:
@@ -28,8 +26,7 @@ sections:
       coordinates:
         latitude: '35.8469'
         longitude: '127.1296'
-     # form:
-      #  provider: netlify
+
     design:
       columns: '2'
 ---
