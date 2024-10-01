@@ -10,9 +10,10 @@ sections:
       text: "Fill out the form or contact us directly at the details below."
       cta:
         label: "Learn More"
-        url: "#contact"
+        url: "#contact-form"
   
   - block: contact
+    id: contact-form
     content:
       title: "Contact"
       email: sh99429@naver.com
