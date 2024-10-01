@@ -6,26 +6,44 @@
 main:
   - name: Home
     url: /
-    weight: 10
+    weight: 100
+
   - name: profile
-    identifier: profiles
-    # url: profile/
-    weight: 20
-  - name: introduction
-    parent: profiles
+    identifier: profile
+    url: profile
+    weight: 200
+  - name: About me
+    parent: profile
     url: about/
-    weight: 10
+    weight: 210
   - name: interests
     parent: profiles
     url: profile/
-    weight: 20
+    weight: 220
+
   - name: projects
+    identifier: projects
     url: project/
-    weight: 30
+    weight: 300
+  - name: project 1
+    parent: projects
+    url: project1
+    weight: 310
+  - name: project 2
+    parent: projects
+    url: project2
+    weight: 320
+  - name: project 3
+    parent: projects
+    url: project3
+    weight: 330
+
   - name: notice
+    identifier: notice
     url: notice/
-    weight: 40
+    weight: 400
+
   - name: contact
     url: contact/
-    weight: 50
+    weight: 500
     
