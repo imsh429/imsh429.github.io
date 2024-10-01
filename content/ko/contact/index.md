@@ -1,6 +1,7 @@
 ---
 title: Contact
 type: landing
+
 sections:
   - block: hero
     content:
@@ -26,6 +27,13 @@ sections:
       coordinates:
         latitude: '35.8469'
         longitude: '127.1296'
+
+      autolink: true
+
+      form:
+        provider: netlify
+        netlify:
+          captcha: false
 
     design:
       columns: '2'
