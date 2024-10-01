@@ -11,12 +11,13 @@ sections:
       cta:
         label: "Learn More"
         url: "#contact-form"
+        #수정 필요
   
   - block: contact
     id: contact-form
     content:
       title: "Contact"
-      email: sh99429@naver.com
+      email: tjgus8175@jbnu.ac.kr
       phone: "123-456-7890"
       address:
         street: "567 Baekje-daero"

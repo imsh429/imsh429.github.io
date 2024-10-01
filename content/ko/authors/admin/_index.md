@@ -18,18 +18,18 @@ organizations:
   url: https://www.jbnu.ac.kr/kor/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: 인공지능을 이용한 개발
 
-#interests:
-#- Artificial Intelligence
-#- Computational Linguistics
-#- Information Retrieval
+interests:
+- Artificial Intelligence
+- Computer Vision
+- Development
 
-#education:
-#  courses:
-#  - course: PhD in Artificial Intelligence
-#    institution: Stanford University
-#    year: 2012
+education:
+  courses:
+  - course: Major in Computer Sciente Artificial Intelligence
+    institution: Jeonbuk National University
+    year: 2020 - 
 #  - course: MEng in Artificial Intelligence
 #    institution: Massachusetts Institute of Technology
 #    year: 2009
