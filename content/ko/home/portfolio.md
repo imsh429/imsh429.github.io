@@ -30,10 +30,10 @@ content:
       tag: '*'
     - name: 쿠키런 변형게임
       tag: CR
-    - name: 맛집 탐색 서비스
-      tag: MJ
     - name: 홈페이지 만들기
       tag: HMP
+    - name: 맛집 탐색 서비스
+      tag: MJ
 
 design:
   columns: '1'
