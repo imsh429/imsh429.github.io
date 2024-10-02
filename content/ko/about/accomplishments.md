@@ -24,13 +24,18 @@ subtitle:
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
   - title: Python
-    description: ''
+    organization: 개발 기술
+    date_start: 'N/A'  # 기본값을 설정해 오류 방지
   - title: C
-    description: ''
+    organization: 개발 기술
+    date_start: 'N/A'
   - title: C++
-    description: ''
+    organization: 개발 기술
+    date_start: 'N/A'
   - title: Java
-    description: ''
+    organization: 개발 기술
+    date_start: 'N/A'
+
 
 design:
   columns: '2'  # You can adjust the number of columns to fit your design preference
