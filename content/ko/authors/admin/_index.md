@@ -14,7 +14,7 @@ status:
 
 # Organizations/Affiliations
 organizations:
-- name: Jeonbuk National University
+- name: 전북대학교
   url: https://www.jbnu.ac.kr/kor/
 
 # Short bio (displayed in user profile at end of posts)
