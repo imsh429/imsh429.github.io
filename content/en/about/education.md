@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 30
 
-title: Education
+title: Course List
 subtitle:
 
 # Date format for experience
@@ -22,26 +22,91 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: MEng Electronic Engineering
-    company: University X
+  - title: Algorithms
+    company: JBNU CSAI
     company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2021-01-01'
-    date_end: '2022-01-01'
-    description: |2-
-        * Dissertation on Y
-        * Basketball team
-        * DJ club
+    date_start: '2023-09-01'
+    date_end: '2023-12-21'
 
-  - title: BEng Electronic Engineering
-    company: University X
+  - title: Computer Architecture
+    company: JBNU CSAI
     company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: My dissertation was on X
+   # company_logo: org-x
+    date_start: '2023-09-01'
+    date_end: '2023-12-21'
+   # description: My dissertation was on X
+
+  - title: Data Structures
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+
+  - title: Operating Systems
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+
+  - title: Logic Design
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+
+  - title: Linear Algebra
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+  
+  - title: Linux Programming
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+
+  - title: Object-Oriented Programming
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+
+  - title: Operating Systems
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-03-01'
+    date_end: '2024-06-21'
+  
+  - title: Web Service Design
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-09-01'
+    #date_end: '2024-06-21' 
+
+  - title: Probability and Statistics
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-09-01'
+    #date_end: '2024-06-21'    
+  
+  - title: C++ Programming
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-09-01'
+    #date_end: '2024-06-21' 
+  
+  - title: Data Communication
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-09-01'
+    #date_end: '2024-06-21' 
+
+  - title: Machine Learning
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2024-09-01'
+    #date_end: '2024-06-21' 
 
 design:
   columns: '1'
