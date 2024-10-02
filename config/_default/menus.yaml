@@ -16,9 +16,9 @@ main:
     parent: profile
     url: about/
     weight: 210
-  - name: Tech Stack
+  - name: Interests
     parent: profile
-    url: techStack/
+    url: interests/
     weight: 220
 
   - name: projects
