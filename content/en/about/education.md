@@ -7,7 +7,7 @@ widget: experience
 headless: true
 
 # Order that this section appears on the page.
-weight: 30
+weight: 20
 
 title: Course List
 subtitle:
@@ -22,6 +22,13 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+
+  - title: Basics of C Programming
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2023-03-01'
+    date_end: '2023-06-21'
+
   - title: Algorithms
     company: JBNU CSAI
     company_url: ''

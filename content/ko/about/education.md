@@ -7,7 +7,7 @@ widget: experience
 headless: true
 
 # Order that this section appears on the page.
-weight: 30
+weight: 20
 
 title: 수강과목
 subtitle:
@@ -22,6 +22,12 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+  - title: C언어기초
+    company: JBNU CSAI
+    company_url: ''
+    date_start: '2023-03-01'
+    date_end: '2023-06-21'
+
   - title: 알고리즘
     company: JBNU CSAI
     company_url: ''
