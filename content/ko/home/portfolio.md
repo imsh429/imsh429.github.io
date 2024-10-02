@@ -28,12 +28,12 @@ content:
   filter_button:
     - name: All
       tag: '*'
-    - name: Machine Learning
-      tag: ML
-    - name: Computer Vision
-      tag: CV
-    - name: NLP
-      tag: NLP
+    - name: 홈페이지 만들기
+      tag: HMP
+    - name: 쿠키런 변형게임
+      tag: CR
+    - name: 맛집 탐색 서비스
+      tag: MJ
 
 design:
   columns: '1'
