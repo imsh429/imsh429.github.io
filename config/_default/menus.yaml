@@ -31,11 +31,11 @@ main:
     weight: 310
   - name: project 2
     parent: projects
-    url: project2
+    url: project/project2
     weight: 320
   - name: project 3
     parent: projects
-    url: project3
+    url: project/project3
     weight: 330
 
   - name: notice
