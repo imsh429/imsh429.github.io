@@ -18,18 +18,18 @@ organizations:
   url: https://www.jbnu.ac.kr/kor/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: AI-driven development
 
-#interests:
-#- Artificial Intelligence
-#- Computational Linguistics
-#- Information Retrieval
+interests:
+- Artificial Intelligence
+- Computer Vision
+- Development
 
-#education:
-#  courses:
-#  - course: PhD in Artificial Intelligence
-#    institution: Stanford University
-#    year: 2012
+education:
+  courses:
+  - course: Major in Computer Sciente Artificial Intelligence
+    institution: Jeonbuk National University
+    year: 2020 - 
 #  - course: MEng in Artificial Intelligence
 #    institution: Massachusetts Institute of Technology
 #    year: 2009
@@ -65,9 +65,9 @@ social:
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 #email: ""
 ---
+ 
+I am currently enrolled in the Department of Computer Science and Artificial Intelligence at Jeonbuk National University, with a deep interest in the field of Artificial Intelligence (AI), particularly in machine learning and computer vision (CV) technologies. I am captivated by the allure of computer vision, which involves analyzing image and video data to discover new possibilities.
 
-Alice Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I aim to explore the process of enabling computers to learn and evolve autonomously by applying machine learning algorithms, thereby uncovering the technological potential to solve various problems. In the future, I plan to conduct in-depth research in this field and pursue academic achievements through graduate studies, while also actively engaging in AI-related development projects.
 
 {{< icon name="download" pack="fas" >}} {{< staticref "uploads/resume.pdf" "newtab" >}}Download{{< /staticref >}} my resumé as a PDF.
