@@ -65,9 +65,9 @@ social:
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 #email: ""
 ---
+ 
+저는 전북대학교 컴퓨터인공지능학부에 재학 중이며, 인공지능(AI) 분야, 특히 머신러닝과 컴퓨터 비전(Computer Vision, CV) 기술에 깊은 관심을 가지고 있습니다. 이미지 및 영상 데이터를 분석하고 이를 통해 새로운 가능성을 발견하는 컴퓨터 비전 분야의 매력에 빠져 있습니다.
 
-Alice Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+머신러닝 알고리즘을 적용하여 컴퓨터가 스스로 학습하고 발전하는 과정을 탐구하며, 이를 통해 다양한 문제를 해결할 수 있는 기술적 잠재력을 발견하고자 합니다. 앞으로도 이 분야에서 더 심도 있는 연구를 진행하고, 학문적 성취를 이루기 위해 대학원 진학을 계획하고 있으며, 동시에 인공지능 관련 개발 프로젝트도 활발히 진행할 예정입니다.
 
 {{< icon name="download" pack="fas" >}} {{< staticref "uploads/resume.pdf" "newtab" >}}Download{{< /staticref >}} my resumé as a PDF.
