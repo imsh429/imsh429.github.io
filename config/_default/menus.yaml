@@ -27,7 +27,7 @@ main:
     weight: 300
   - name: project 1
     parent: projects
-    url: project1
+    url: project/project1
     weight: 310
   - name: project 2
     parent: projects
