@@ -36,6 +36,7 @@ header:
     enable: true
     align: c
     show_logo: true
+    logo: "/assets/media/icon.png"
     show_language: true
     show_day_night: true
     show_search: true
