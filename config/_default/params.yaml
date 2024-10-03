@@ -17,8 +17,8 @@ marketing:
   seo:
     site_type: Person
     local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo blog theme powered by Wowchemy website builder.'
+    org_name: 'SeoHyeon'
+    description: 'SeoHyeon in Jeonbuk National University.'
     twitter: 'GetResearchDev'
   analytics:
     google_analytics: ''
@@ -36,7 +36,6 @@ header:
     enable: true
     align: c
     show_logo: true
-    logo: "/assets/media/icon.png"
     show_language: true
     show_day_night: true
     show_search: true
