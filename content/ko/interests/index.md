@@ -10,15 +10,15 @@ sections:
     # text: 
       items:
         - name: AI
-          description: 90%
+          # description: 90%
           icon: brain
-          icon_pack: fab
-        - name: Statistics
-          description: 100%
-          icon: chart-line
+          icon_pack: fas
+        - name: Machine Learning
+          # description: 100%
+          icon: robot
           icon_pack: fas
         - name: Photography
-          description: 10%
+          # description: 10%
           icon: camera-retro
           icon_pack: fas
           
