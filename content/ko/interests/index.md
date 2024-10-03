@@ -5,8 +5,8 @@ type: landing
 sections:
   - block: features
     content:
-      title: My Interests
-      subtitle: I am interested in...
+      title: Interests
+      subtitle: 저는 이런 분야에 관심을 가지고 있어요
     # text: 
       items:
         - name: AI
