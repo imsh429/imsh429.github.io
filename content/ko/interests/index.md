@@ -17,9 +17,9 @@ sections:
           # description: 100%
           icon: robot
           icon_pack: fas
-        - name: Photography
+        - name: Development
           # description: 10%
-          icon: camera-retro
+          icon: code
           icon_pack: fas
           
   - block: slider
