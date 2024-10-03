@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Seohyeon_Works # Website name
-baseURL: 'https://jbnu.imsh429.or.kr/' # Website URL
+baseURL: 'https://imsh429.github.io/' # Website URL
 
 ############################
 ## PAGE OPTIONS
