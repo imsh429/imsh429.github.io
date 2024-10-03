@@ -1,17 +1,17 @@
 ---
-title: My page
+title: Interests
 type: landing
 
 sections:
   - block: features
     content:
       title: My Interests
-      subtitle: Section subtitle
-      text: Section text
+      subtitle: I am interested in...
+    # text: 
       items:
-        - name: R
+        - name: AI
           description: 90%
-          icon: r-project
+          icon: brain
           icon_pack: fab
         - name: Statistics
           description: 100%
