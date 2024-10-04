@@ -48,7 +48,7 @@ content:
 
 design:
   slide_height: ''
-  is_fullscreen: true
+  is_fullscreen: false
   loop: true
-  interval: 2000
+  interval: 3000
 ---
