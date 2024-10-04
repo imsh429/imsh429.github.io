@@ -144,3 +144,28 @@ ul.network-icon .big-icon {
   background-color: #4a5568;  // 다크 모드에서 호버 시 변경될 배경색
   color: #f7fafc;  // 다크 모드에서 호버 시 텍스트 색상
 }
+
+/* 메뉴 기본 스타일 */
+.navbar a {
+  color: #333;  /* 기본 메뉴 텍스트 색상 */
+  text-decoration: none;  /* 밑줄 제거 */
+  padding: 10px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;  /* 부드러운 전환 */
+}
+
+/* 메뉴 항목 호버 시 */
+.navbar a:hover {
+  color: #3498db;  /* 호버 시 텍스트 색상 변경 */
+  background-color: #f0f0f0;  /* 호버 시 배경색 추가 */
+}
+
+/* 다크 모드에서 메뉴 항목 */
+.dark .navbar a {
+  color: #fff;  /* 다크 모드에서 기본 텍스트 색상 */
+}
+
+/* 다크 모드에서 호버 시 */
+.dark .navbar a:hover {
+  color: #f7fafc;  /* 다크 모드에서 호버 시 텍스트 색상 */
+  background-color: #4a5568;  /* 다크 모드에서 호버 시 배경색 */
+}
