@@ -1,5 +1,4 @@
 ---
-title: 'Notice & Contact'
 # A section created with the Slider widget.
 widget: slider
 
@@ -8,6 +7,8 @@ headless: true
 
 # Order that this section appears on the page.
 weight: 30
+
+title: 'Notice & Contact'
 
 content:
   slides:
