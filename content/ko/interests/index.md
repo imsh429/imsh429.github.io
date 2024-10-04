@@ -21,6 +21,10 @@ sections:
           # description: 10%
           icon: code
           icon_pack: fas
+        - name: Computer Vision
+          # description: 10%
+          icon: eye
+          icon_pack: fas
           
   - block: slider
     content:
