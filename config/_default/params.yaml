@@ -98,9 +98,13 @@ features:
     api_key: ''
     zoom: 15
 
+params:
+  og_image: "assets/media/image1.jpg"    
+
 extensions:
   cms:
     branch: main
     local_backend: false
   academicons:
     enable: false
+
