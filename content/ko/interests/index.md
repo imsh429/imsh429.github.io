@@ -21,13 +21,7 @@ sections:
           # description: 10%
           icon: code
           icon_pack: fas
-        - name: Computer Vision
-          # description: 10%
-          icon: eye
-          icon_pack: fas
-    design:
-      columns: "1"
-            
+
   - block: slider
     content:
       slides:
