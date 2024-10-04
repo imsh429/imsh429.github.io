@@ -51,5 +51,5 @@ design:
   is_fullscreen: true
   loop: true
   interval: 3000
-  spacing: {padding: [20, 0, 20, 0]}
+  spacing: {padding: [50, 0, 50, 0]}
 ---
