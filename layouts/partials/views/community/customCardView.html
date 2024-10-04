@@ -1,4 +1,5 @@
 {{ $item := .item }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
 
 {{ $link := $item.RelPermalink }}
 {{ $target := "" }}
@@ -7,31 +8,89 @@
   {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
 {{ end }}
 
-{{ $resource := partial "functions/get_featured_image.html" $item }}
-{{ $anchor := $item.Params.image.focal_point | default "Center" }}
+{{/* Get summary. */}}
+{{ $summary := "" }}
+{{ if $item.Params.summary }}
+  {{ $summary = $item.Params.summary | markdownify | emojify }}
+{{ else if $item.Params.abstract }}
+  {{ $summary = $item.Params.abstract | markdownify | emojify | truncate (site.Params.abstract_length | default 135) }}
+{{ else if $item.Summary }}
+  {{ $summary = $item.Summary }}
+{{ end }}
 
-<a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="mb-5">
-  <div class="md:flex relative"> <!-- Add relative positioning here -->
-    <div class="md:flex-shrink-0 overflow-hidden">
-      {{ with $resource }}
-        {{ $image := .Fill (printf "655x655 %s" $anchor) }}
-        {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
-        <img class="h-48 w-full object-cover md:w-48 hover:scale-125 transition duration-500 cursor-pointer" loading="lazy" src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" alt="{{ $item.Title | plainify }}">
-      {{ end }}
-      <!-- 투명 레이어 추가 -->
-      <div class="absolute inset-0 bg-black opacity-50"></div>
-      <!-- 텍스트 오버레이 추가 -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <h2 class="text-white text-xl font-bold">{{ $item.Title }}</h2>
+{{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
+
+<div class="card">
+  {{ with $resource }}
+  {{ $image := .Resize "550x" }}
+  {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+  <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
+    <div class="image-overlay">
+      <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
+           alt="{{ $item.Title }}" class="img-responsive" loading="lazy" style="margin-top: 15px;">
+      <div class="overlay-content">
+        <h4>{{ $item.Title | markdownify | emojify }}</h4>
       </div>
     </div>
-    <div class="p-8">
-      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
-        {{ ($item.Params.summary | default $item.Summary) | plainify | htmlUnescape | chomp -}}
-      </p>
-      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">
-        {{- $item.Date | time.Format (site.Params.locale.date_format | default ":date_long") -}}
-      </p>
+  </a>
+  {{ end }}
+  <div class="card-text">
+    <div class="section-subheading article-title mb-1 mt-3">
+        <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
     </div>
+
+    {{ if $item.Params.authors }}
+    <div class="article-metadata">
+        <div>
+            {{ partial "page_metadata_authors" $item }}
+        </div>
+    </div>
+    {{ end }}
+
+    {{ with $summary }}
+    <div class="article-style">
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ if $has_attachments }}
+    <div class="btn-links">
+      {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+    </div>
+    {{ end }}
   </div>
-</a>
+</div>
+
+<style>
+  .image-overlay {
+    position: relative;
+    display: inline-block;
+  }
+
+  .image-overlay img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* 텍스트 색상 */
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .image-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* 투명도 설정 */
+    z-index: 1; /* 텍스트 위에 투명도 레이어가 오도록 설정 */
+  }
+</style>

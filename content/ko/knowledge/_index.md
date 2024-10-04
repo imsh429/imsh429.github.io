@@ -8,5 +8,5 @@ view: community/customCardView
 banner:
   caption: ''
   image:
-    filename: ' '  # 원하는 배너 이미지 경로
+    filename: 'icon.png'  # 원하는 배너 이미지 경로
 ---
