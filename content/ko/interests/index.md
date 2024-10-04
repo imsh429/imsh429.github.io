@@ -25,7 +25,9 @@ sections:
           # description: 10%
           icon: eye
           icon_pack: fas
-          
+    design:
+      columns: "1"
+            
   - block: slider
     content:
       slides:
