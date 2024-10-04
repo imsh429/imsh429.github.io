@@ -52,6 +52,6 @@ design:
   loop: true
   interval: 3000
   margin:
-    top: '30px'
-    bottom: '30px'
+    top: '100px'
+    bottom: '100px'
 ---
