@@ -99,7 +99,7 @@ features:
     zoom: 15
 
 params:
-  og_image: "assets/media/image1.jpg"    
+  og_image: "assets/media/ogImage.jpg"    
 
 extensions:
   cms:
