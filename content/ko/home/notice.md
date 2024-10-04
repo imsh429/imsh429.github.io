@@ -8,8 +8,6 @@ headless: true
 # Order that this section appears on the page.
 weight: 30
 
-title: 'Notice & Contact'
-
 content:
   slides:
     - title: Contact
@@ -53,4 +51,7 @@ design:
   is_fullscreen: true
   loop: true
   interval: 3000
+  margin:
+    top: '30px'
+    bottom: '30px'
 ---
