@@ -1,4 +1,5 @@
 ---
+title: 'Notice & Contact'
 # A section created with the Slider widget.
 widget: slider
 
@@ -10,8 +11,8 @@ weight: 30
 
 content:
   slides:
-    - title: 👋 Interests
-      content: I am interested in ...
+    - title: Contact
+      content: How to contact me..
       align: center
       background:
         image:
@@ -30,8 +31,8 @@ content:
             brightness: 0.7
         position: center
         color: '#555'
-    - title: Machine Learning
-      content: 'Just opened last month!'
+    - title: How to contact me
+      content: ''
       align: right
       background:
         image:
