@@ -1,7 +1,7 @@
 ---
 title: Projects
 
-view: showcase
+view: masonry
 
 banner: 
     caption: ''
