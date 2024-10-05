@@ -88,9 +88,11 @@ sections:
   - block: portfolio
     content:
       title: Projects
-      page_type: project
-      filter_default: 0
-      filter_button:
+      filters:
+        folders:
+          -project
+      default_button_index: 0
+      buttons:
         - name: ALL
           tag: '*'
         - name: 쿠키런 변형 게임
