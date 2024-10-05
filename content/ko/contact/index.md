@@ -3,22 +3,11 @@ title: Contact
 type: landing
 
 sections:
-  - block: hero
-    content:
-      title: "Get in Touch"
-      subtitle: "We'd love to hear from you."
-      text: "Fill out the form or contact us directly at the details below."
-      cta:
-        label: "Learn More"
-        url: "#contact-form"
-        #수정 필요
-  
   - block: contact
-    id: contact-form
     content:
       title: "Contact"
       email: tjgus8175@jbnu.ac.kr
-      phone: "123-456-7890"
+      phone: "010-2576-8297"
       address:
         street: "567 Baekje-daero"
         city: Jeonju-si
