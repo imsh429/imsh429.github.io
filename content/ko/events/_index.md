@@ -1,7 +1,7 @@
 ---
 title: Upcoming Events
 
-view: compact
+view: custom_compact
 
 banner:
     caption: ''
