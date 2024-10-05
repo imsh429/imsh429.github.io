@@ -3,6 +3,11 @@ title: FAQ
 type: landing
 
 sections:
+  - block: faq
+    content:
+    title: 자주 물어보는 질문
+    faq_items: 
+        - 질문: N/A
   - block: hero
     content:
       title: "FAQ"
