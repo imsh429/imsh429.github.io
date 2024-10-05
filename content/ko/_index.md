@@ -110,21 +110,19 @@ sections:
 
   - block: collection
     content:
-      title: Latest Publications
+      title: notice
       subtitle:
       text:
       count: 3
       filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
+        folders:
+          - notice
+          - gallery
       offset: 0
       order: desc
-      page_type: publication
+      #page_type: publication
     design:
-      view: community/custom_compact
+      view: community/custom_article
       columns: '2'
     advanced:
       css_style: "text-align: center;"
