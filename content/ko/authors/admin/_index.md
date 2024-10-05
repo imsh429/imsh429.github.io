@@ -53,10 +53,10 @@ social:
     link: https://discord.com/users/1282685152795033673
   - icon: Instagram
     icon_pack: fab
-    #link: https://discord.com/users/1282685152795033673
+    link: https://discord.com/users/1282685152795033673
   - icon: Facebook
     icon_pack: fab
-    #link: https://discord.com/users/1282685152795033673
+    link: https://discord.com/users/1282685152795033673
   - icon: Youtube
     icon_pack: fab
     link: https://discord.com/users/1282685152795033673
