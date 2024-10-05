@@ -51,13 +51,13 @@ social:
   - icon: discord
     icon_pack: fab
     link: https://discord.com/users/1282685152795033673
-  - icon: Instagram
+  - icon: instagram
     icon_pack: fab
     link: https://discord.com/users/1282685152795033673
-  - icon: Facebook
+  - icon: facebook
     icon_pack: fab
     link: https://discord.com/users/1282685152795033673
-  - icon: Youtube
+  - icon: youtube
     icon_pack: fab
     link: https://discord.com/users/1282685152795033673
 # Link to a PDF of your resume/CV from the About widget.
