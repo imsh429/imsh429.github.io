@@ -37,7 +37,7 @@ sections:
   - block: slider
     content:
       slides:
-      - title: 👋 Interests
+      - title: 나의 목표
         content: I am interested in ...
         align: center
         background:
