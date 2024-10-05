@@ -15,7 +15,7 @@ content:
       align: center
       background:
         image:
-          filename: media/image1_ai.jpg
+          filename: /media/image1_ai.jpg
           filters:
             brightness: 0.7
         position: right
