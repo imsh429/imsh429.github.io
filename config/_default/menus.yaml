@@ -42,6 +42,14 @@ main:
     identifier: notice
     url: notice/
     weight: 400
+  - name: news
+    parent: notice
+    url: news/
+    weight: 410
+  - name: gallery
+    parent: notice
+    url: gallery
+    weight: 420 
 
   - name: contact
     url: contact/
