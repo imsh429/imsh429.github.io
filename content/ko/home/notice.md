@@ -10,32 +10,32 @@ weight: 20
 
 content:
   slides:
-    - title: Contact
-      content: How to contact me..
+    - title: AI
+      content: 인간의 지능을 모방해 문제 해결, 학습, 패턴 인식 등의 작업을 자동으로 수행하는 기술
       align: center
       background:
         image:
-          filename: image1.jpg
+          filename: image1_ai.jpg
           filters:
             brightness: 0.7
         position: right
         color: '#666'
-    - title: AI ☕️
-      content: 'Share your knowledge with the group and explore exciting new topics together!'
+    - title: Computer Vision
+      content: 이미지를 분석하고 이해하여 객체 인식, 장면 해석, 동작 추적 등 시각적 데이터를 처리하는 AI 기술 분야
       align: left
       background:
         image:
-          filename: image2.jpg
+          filename: image2_cv.jpg
           filters:
             brightness: 0.7
         position: center
         color: '#555'
-    - title: How to contact me
-      content: ''
+    - title: Machine Learning
+      content: 데이터로부터 패턴을 학습하고 예측을 수행하도록 컴퓨터를 훈련시키는 AI 기술
       align: right
       background:
         image:
-          filename: image1.jpg
+          filename: image3_ml.jpg
           filters:
             brightness: 0.5
         position: center
