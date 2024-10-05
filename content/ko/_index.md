@@ -90,7 +90,7 @@ sections:
       title: Projects
       filters:
         folders:
-          -project
+          - project
       default_button_index: 0
       buttons:
         - name: ALL
@@ -105,7 +105,7 @@ sections:
       columns: '2'
       view: custom_card
       flip_alt_rows: true
-      spacing: { padding: [20, 0, 20, 0] }
+      spacing: { padding: [30, 0, 30, 0] }
 
   - block: collection
     content:
