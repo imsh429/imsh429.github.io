@@ -44,7 +44,7 @@ main:
     weight: 400
   - name: news
     parent: notice
-    url: news/
+    url: notice/
     weight: 410
   - name: gallery
     parent: notice
