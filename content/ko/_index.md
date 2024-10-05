@@ -85,21 +85,24 @@ sections:
       # Duration of transition between slides (in ms)
       interval: 3000
 
-  - block: collection
+  - block: portfolio
     content:
-      id: section-1
-      title: Projects
-      subtitle:
-      text:
-      count: 3 #표시할 프로젝트 수
-      offset: 0
-      order: desc
-      filters:
-        folders:
-          - project
+      page_type: project
+      filter_default: 0
+      filter_button:
+        - name: ALL
+          tag: '*'
+        - name: 쿠키런 변형 게임
+          tag: CR
+        - name: 홈페이지 만들기
+          tag: HMP
+        - name: 맛집 탐색 서비스
+          tag: MJ  
     design:
-      view: community/custom_card
       columns: '2'
+      view: community/custom_card
+      flip_alt_rows: true
+      spacing: { padding: [0, 0, 0, 0] }
 
   - block: collection
     content:
