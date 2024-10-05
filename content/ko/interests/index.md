@@ -30,7 +30,7 @@ sections:
         align: center
         background:
           image:
-            filename: image1.jpg
+            filename: image1_ai.jpg
             filters:
               brightness: 0.7
           position: right
@@ -40,7 +40,7 @@ sections:
         align: left
         background:
           image:
-            filename: image2.jpg
+            filename: image1_ai.jpg
             filters:
               brightness: 0.7
           position: center
@@ -50,7 +50,7 @@ sections:
         align: right
         background:
           image:
-            filename: image1.jpg
+            filename: image3_ml.jpg
             filters:
               brightness: 0.5
           position: center
