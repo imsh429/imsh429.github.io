@@ -1,5 +1,5 @@
 ---
-title: Notice
+title: News
 
 view: compact
 
