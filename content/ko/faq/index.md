@@ -3,11 +3,6 @@ title: FAQ
 type: landing
 
 sections:
-  - block: faq
-    content:
-    title: 자주 물어보는 질문
-    faq_items: 
-        - 질문: N/A
   - block: hero
     content:
       title: "FAQ"
@@ -16,10 +11,19 @@ sections:
       cta:
         label: "FAQ"
         url: "../contact/"
-design:
-    columns: '2'
+    design:
+      columns: '2'
+
+  - block: faq
+    content:
+      title: 자주 물어보는 질문
+      text: "."
+      faq_items:
+        - question: ''
+          answer: ''
+       
 
 banner:
-    caption: ''
-    image: 'faq.jpg'
+  caption: ''
+  image: 'faq.jpg'
 ---
