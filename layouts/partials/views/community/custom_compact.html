@@ -74,7 +74,9 @@
 
     <div style="margin-bottom: 50px;"></div>
   </div>
-  <!-- <div class="ml-3">
+
+  <!-- 이미지 포함 부분 -->
+  <div class="ml-3">
     {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
     {{ with $resource }}
       {{ $image := .Resize "150x" }}
@@ -84,5 +86,5 @@
             alt="{{ $item.Title }}" loading="lazy">
       </a>
     {{end}}
-  </div> -->
+  </div>
 </div>
