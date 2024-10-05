@@ -96,9 +96,9 @@ sections:
       order: desc
       filters:
         folders:
-          - project/project1
-          - project/project2
-          - project/project3
+          - project
+          - 
+          - 
     design:
       view: community/custom_card
       columns: '2'
