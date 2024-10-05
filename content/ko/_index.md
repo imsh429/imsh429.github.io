@@ -91,14 +91,12 @@ sections:
       title: Projects
       subtitle:
       text:
-      count: 3
+      count: 3 #표시할 프로젝트 수
       offset: 0
       order: desc
       filters:
         folders:
           - project
-          - 
-          - 
     design:
       view: community/custom_card
       columns: '2'
