@@ -9,9 +9,9 @@ sections:
       email: tjgus8175@jbnu.ac.kr
       phone: "010-2576-8297"
       address:
-        street: "567 Baekje-daero"
+        street: "567 백제대로"
         city: Jeonju-si
-        region: Jeollabuk-do
+        region: 전라북도
         postcode: "54896"
         country: South Korea
         country_code: KR
