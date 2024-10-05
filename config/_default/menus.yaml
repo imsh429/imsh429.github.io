@@ -4,40 +4,44 @@
   #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Home
-    url: /
-    weight: 100
+  - #name: Home
+    #url: /
+    #weight: 100
 
   - name: profile
     identifier: profile
     url: profile
-    weight: 200
+    weight: 100
   - name: About me
     parent: profile
     url: about/
-    weight: 210
+    weight: 110
   - name: Interests
     parent: profile
     url: interests/
-    weight: 220
+    weight: 120
 
   - name: projects
     identifier: projects
     url: project/
-    weight: 300
+    weight: 200
 
   - name: notice
     identifier: notice
     url: notice/
-    weight: 400
+    weight: 300
   - name: news
     parent: notice
     url: notice/
-    weight: 410
+    weight: 310
   - name: gallery
     parent: notice
     url: gallery
-    weight: 420 
+    weight: 320 
+
+  - name: publication
+    url: publication/
+    weight: 400
 
   - name: contact
     url: contact/
