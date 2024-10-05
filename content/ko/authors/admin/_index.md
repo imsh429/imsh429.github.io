@@ -70,4 +70,4 @@ social:
 
 머신러닝 알고리즘을 적용하여 컴퓨터가 스스로 학습하고 발전하는 과정을 탐구하며, 이를 통해 다양한 문제를 해결할 수 있는 기술적 잠재력을 발견하고자 합니다. 앞으로도 이 분야에서 더 심도 있는 연구를 진행하고, 학문적 성취를 이루기 위해 대학원 진학을 계획하고 있으며, 동시에 인공지능 관련 개발 프로젝트도 활발히 진행할 예정입니다.
 
-{{< icon name="download" pack="fas" >}} {{< staticref "uploads/resume.pdf" "newtab" >}}Download{{< /staticref >}} my resumé as a PDF.
+{{< icon name="download" pack="fas" >}} {{< staticref "uploads/resume.pdf" "newtab" >}}자격사항{{< /staticref >}}을 pdf로 다운받아 확인하세요.
