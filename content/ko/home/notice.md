@@ -15,7 +15,7 @@ content:
       align: center
       background:
         image:
-          filename: /media/image1_ai.jpg
+          filename: image1_ai.jpg
           filters:
             brightness: 0.7
         position: right
@@ -39,6 +39,16 @@ content:
           filters:
             brightness: 0.5
         position: center
+        color: '#333'
+    - title: Development
+      content: 창의적인 아이디어를 기술적으로 구현하고, 소프트웨어와 시스템을 설계, 구축, 유지보수하는 과정
+      align: center
+      background:
+        image:
+          filename: image3_ml.jpg
+          filters:
+            brightness: 0.5
+        position: left
         color: '#333'
       link:
         icon: graduation-cap
