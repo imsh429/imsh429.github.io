@@ -25,18 +25,6 @@ main:
     identifier: projects
     url: project/
     weight: 300
-  - name: project 1
-    parent: projects
-    url: project/project1
-    weight: 310
-  - name: project 2
-    parent: projects
-    url: project/project2
-    weight: 320
-  - name: project 3
-    parent: projects
-    url: project/project3
-    weight: 330
 
   - name: notice
     identifier: notice
