@@ -1,9 +1,7 @@
-<div class="cards-wrapper" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+<div class="cards-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {{ range .Pages }}
-    <div class="card" style="box-sizing: border-box; margin-bottom: 20px;">
+    <div class="card shadow-lg rounded-lg overflow-hidden">
       {{ $item := . }}
-      {{ $has_attachments := partial "functions/has_attachments" $item }}
-
       {{ $link := $item.RelPermalink }}
       {{ $target := "" }}
       {{ if $item.Params.external_link }}
@@ -11,50 +9,38 @@
         {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
       {{ end }}
 
-      {{/* Get summary. */}}
-      {{ $summary := "" }}
-      {{ if $item.Params.summary }}
-        {{ $summary = $item.Params.summary | markdownify | emojify }}
-      {{ else if $item.Params.abstract }}
-        {{ $summary = $item.Params.abstract | markdownify | emojify | truncate (site.Params.abstract_length | default 135) }}
-      {{ else if $item.Summary }}
-        {{ $summary = $item.Summary }}
-      {{ end }}
-
+      {{/* 이미지 섹션 */}}
       {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
-
       {{ with $resource }}
-      {{ $image := .Resize "550x" }}
-      {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
-      <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
-        <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-             alt="{{ $item.Title }}" class="img-responsive" loading="lazy" style="margin-top: 15px;">
-      </a>
+        <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="block">
+          <img src="{{ .RelPermalink }}" alt="{{ $item.Title }}" class="w-full h-48 object-cover">
+        </a>
       {{ end }}
 
-      <div class="card-text">
-        <div class="section-subheading article-title mb-1 mt-3">
-          <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
-        </div>
-        
+      <div class="p-4">
+        {{/* 제목 섹션 */}}
+        <h3 class="text-lg font-semibold">
+          <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
+        </h3>
+
+        {{/* 요약 섹션 */}}
+        {{ $summary := "" }}
+        {{ if $item.Params.summary }}
+          {{ $summary = $item.Params.summary | markdownify | emojify }}
+        {{ else if $item.Params.abstract }}
+          {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 135 }}
+        {{ else if $item.Summary }}
+          {{ $summary = $item.Summary }}
+        {{ end }}
+        {{ if $summary }}
+          <p class="text-gray-600 mt-2">{{ $summary }}</p>
+        {{ end }}
+
+        {{/* 저자 정보 */}}
         {{ if $item.Params.authors }}
-        <div class="article-metadata">
-          <div>
+          <div class="text-sm text-gray-500 mt-4">
             {{ partial "page_metadata_authors" $item }}
           </div>
-        </div>
-        {{ end }}
-
-        {{ with $summary }}
-        <div class="article-style">
-          <p>{{ . }}</p>
-        </div>
-        {{ end }}
-
-        {{ if $has_attachments }}
-        <div class="btn-links">
-          {{ partial "page_links" (dict "page" $item "is_list" 1) }}
-        </div>
         {{ end }}
       </div>
     </div>
