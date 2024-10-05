@@ -101,8 +101,8 @@ features:
     zoom: 15
 
 params:
-  og_image: "media/icon.png"   
-  description: "SeoHyeon_Homepage" 
+  og_image: "media/ogImage.jpg"   
+  description: "SeoHyeon_Works" 
 
 extensions:
   cms:
