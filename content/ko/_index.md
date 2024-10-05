@@ -101,7 +101,7 @@ sections:
           tag: MJ  
     design:
       columns: '2'
-      view: masonry
+      view: custom_card
       flip_alt_rows: true
       spacing: { padding: [20, 0, 20, 0] }
 
