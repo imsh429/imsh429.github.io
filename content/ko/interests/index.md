@@ -47,31 +47,27 @@ sections:
               brightness: 0.7
           position: right
           color: '#666'
-      - title: AI ☕️
-        content: 'Share your knowledge with the group and explore exciting new topics together!'
+      - title: 심화 학습 및 프로젝트 진행
+        content: pyTorch와 같은 프레임워크를 공부하여 기술 스택을 강화하고 관련 프로젝트를 진행할 예정입니다.
         align: left
         background:
           image:
-            filename: image1_ai.jpg
+            filename: study.jpg
             filters:
               brightness: 0.7
           position: center
           color: '#555'
-      - title: Machine Learning
-        content: 'Just opened last month!'
+      - title: 인공지능 연구자이자 개발자로!
+        content: 연구를 통해 학문적 성취를 이루고, 이를 바탕으로 ai 연구 및 개발자로 성장하고자 합니다.
         align: right
         background:
           image:
-            filename: image3_ml.jpg
+            filename: mygoal.jpg
             filters:
               brightness: 0.5
           position: center
           color: '#333'
-        link:
-          icon: graduation-cap
-          icon_pack: fas
-          text: Join Us
-          url: ../contact/
+
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
       slide_height: ''
