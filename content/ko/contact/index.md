@@ -6,7 +6,10 @@ sections:
   - block: contact
     content:
       title: "Contact"
-      email: tjgus8175@jbnu.ac.kr
+      email:
+        label: "Email"
+        text: tjgus8175@jbnu.ac.kr
+        icon: fab fa-envelope  # 이메일 아이콘 추가
       phone: "010-2576-8297"
       address:
         street: "567 백제대로"
