@@ -57,7 +57,7 @@ sections:
               brightness: 0.7
           position: center
           color: '#555'
-      - title: 인공지능 연구자이자 개발자로!
+      - title: 인공지능 연구자이자 개발자로
         content: 연구를 통해 학문적 성취를 이루고, 이를 바탕으로 ai 연구 및 개발자로 성장하고자 합니다.
         align: right
         background:

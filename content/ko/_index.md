@@ -126,13 +126,4 @@ sections:
       columns: '2'
     advanced:
       css_style: "text-align: center;"
-
-  - block: markdown
-    content:
-      title:
-      subtitle:
-      text: |
-        {{% cta cta_link="./contact/" cta_text="Join team →" %}}
-    design:
-      columns: '1'
 ---
