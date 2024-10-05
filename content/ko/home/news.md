@@ -5,7 +5,7 @@ weight: 40
 cards:
   - title: "쿠키런 변형게임"
     summary: "쿠키런 변형 게임 프로젝트"
-    image: "image1.jpg"
+   # image: "image1.jpg"
     url: "/projects/cookie-run"
 
   - title: "홈페이지 만들기"
