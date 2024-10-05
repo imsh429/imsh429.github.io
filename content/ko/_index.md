@@ -30,67 +30,65 @@ sections:
   - block: slider
     content:
       slides:
-
-      - title: <span style="font-size:70%">Recruit</span>
-        content: <span style="font-size:70%">Interested in MacsLAB?</span>
+      - title: <span style="font-size:70%">AI</span>
+        content: <span style="font-size:60%">인간의 지능을 모방해 문제 해결, 학습, 패턴 인식 등의 작업을 자동으로 수행하는 기술</span>
         align: center
         background:
           image:
             filename: image1_ai.jpg
             filters:
-              brightness: 0.4
-          position: center
-          color: '#000'
-        link:
-          icon: user
-          icon_pack: fas
-          text: <span style="font-size:60%">Join Us</span>
-          text-color: '#000'
-          url: contact
+              brightness: 0.7
+          position: right
+          color: '#666'
 
-      - title: <span style="font-size:70%">AI</span>
-        content: <span style="font-size:70%">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:70%">
-        align: center
+      - title: <span style="font-size:70%">Computer Vision</span>
+        content: <span style="font-size:60%">이미지를 분석하고 이해하여 객체 인식, 장면 해석, 동작 추적 등 시각적 데이터를 처리하는 AI 기술 분야</span>
+        align: left
         background:
           image:
-            filename: notice.jpg
+            filename: image2_cv.jpg
             filters:
-              brightness: 0.4
+              brightness: 0.7
           position: center
-          color: '#000'
+          color: '#555'
 
-      - title: <span style="font-size:70%">Healthcare</span>
-        content: <span style="font-size:70%">의료 및 헬스케어 분야에 적용 가능한 AI 기술 개발</span>
-        align: center
+      - title: <span style="font-size:70%">Machine Learning</span>
+        content: <span style="font-size:70%">데이터로부터 패턴을 학습하고 예측을 수행하도록 컴퓨터를 훈련시키는 AI 기술</span>
+        align: right
         background:
           image:
-            filename: notice.jpg
+            filename: image3_ml.jpg
             filters:
-              brightness: 0.4
+              brightness: 0.5
           position: center
-          color: '#000'
-
-      - title: <span style="font-size:70%">Mathematics</span>
-        content: <span style="font-size:70%">AI와 관련된 수학 및 최적화 이론 연구</span>
-        align: center
-        background:
-          image:
-            filename: notice.jpg
-            filters:
-              brightness: 0.4
-          position: center
-          color: '#000'
+          color: '#333'
 
       - title: <span style="font-size:70%">Development</span>
-        content: <span style="font-size:70%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
+        content: <span style="font-size:70%">창의적인 아이디어를 기술적으로 구현하고, 소프트웨어와 시스템을 설계, 구축, 유지보수하는 과정</span>
         align: center
         background:
           image:
-            filename: notice.jpg
+            filename: development.jpg
             filters:
-              brightness: 0.4
+              brightness: 0.5
+          position: left
+          color: '#333'
+
+      - title: <span style="font-size:70%">Contact</span>
+        content: <span style="font-size:70%">How to contact me...</span>
+        align: center
+        background:
+          image:
+            filename: contact.jpg
+            filters:
+              brightness: 0.5
           position: center
-          color: '#000'
+          color: '#333'
+        link:
+            icon: graduation-cap
+            icon_pack: fas
+            text: contact me
+            url: ../contact/
 
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
