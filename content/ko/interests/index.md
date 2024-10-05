@@ -17,9 +17,21 @@ sections:
           # description: 100%
           icon: robot
           icon_pack: fas
+        - name: Computer Vision
+          # description: 10%
+          icon: eye
+          icon_pack: fas
         - name: Development
           # description: 10%
           icon: code
+          icon_pack: fas
+        - name: Data Science
+          # description: 10%
+          icon: magnifying-glass-chart
+          icon_pack: fas
+        - name: Natural Language Processing
+          # description: 10%
+          icon: language
           icon_pack: fas
 
   - block: slider
