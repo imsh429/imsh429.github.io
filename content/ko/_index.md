@@ -7,7 +7,7 @@ type: landing
 sections: 
   - block: features
     content:
-      title: <span style="font-size:70%">저의 홈페이지에 오신 것을 환영합니다.</span>
+      title: <span style="font-size:70%">신서현의 홈페이지에 오신 것을 환영합니다.</span>
       text: <br><span style="font-size:125%">저는 전북대학교 컴퓨터인공지능학부에 재학 중이며, 인공지능(AI) 분야, 특히 머신러닝과 컴퓨터 비전에 많은 관심을 가지고 있습니다. 앞으로 인공지능 분야에서 깊이 있는 연구를 이어가며 성과를 이루는 개발자가 되고 싶습니다.</span> <br><br>
         {{% cta cta_link="./about/" cta_text="About me →" %}}
 
