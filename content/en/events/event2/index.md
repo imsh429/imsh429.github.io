@@ -1,5 +1,5 @@
 ---
-title: 웹서비스설계 과제3
+title: Web Service Design Assignment 3
 date: 2024-10-05
 ---
 

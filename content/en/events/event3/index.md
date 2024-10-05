@@ -1,5 +1,5 @@
 ---
-title: 웹서비스설계 term-project
+title: Web Service Design term-project
 date: 2024-10-05
 ---
 
