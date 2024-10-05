@@ -37,12 +37,12 @@ sections:
   - block: slider
     content:
       slides:
-      - title: 나의 목표
-        content: I am interested in ...
+      - title: 앞으로의 계획 및 목표
+        content: My goal is...
         align: center
         background:
           image:
-            filename: image1_ai.jpg
+            filename: goal.jpg
             filters:
               brightness: 0.7
           position: right
