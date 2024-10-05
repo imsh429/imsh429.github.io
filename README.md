@@ -1,4 +1,4 @@
-# [SeoHyeon Portpolio](https://imsh429.github.io/)
+# [SeoHyeon Portfolio](https://imsh429.github.io/)
 
 [![Screenshot](preview.png)](https://imsh429.github.io/)
 
