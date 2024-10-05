@@ -101,7 +101,7 @@ features:
     zoom: 15
 
 params:
-  og_image: "media/ogImage.jpg"   
+  og_image: "media/icon.png"   
   description: "SeoHyeon_Works" 
 
 extensions:
