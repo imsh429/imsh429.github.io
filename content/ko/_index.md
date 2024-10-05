@@ -87,6 +87,7 @@ sections:
 
   - block: portfolio
     content:
+      title: Projects
       page_type: project
       filter_default: 0
       filter_button:
@@ -100,7 +101,7 @@ sections:
           tag: MJ  
     design:
       columns: '2'
-      view: community/custom_card
+      view: masonry
       flip_alt_rows: true
       spacing: { padding: [0, 0, 0, 0] }
 
