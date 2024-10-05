@@ -95,6 +95,7 @@ sections:
       buttons:
         - name: ALL
           tag: '*'
+          type: project
         - name: 쿠키런 변형 게임
           tag: CR
         - name: 홈페이지 만들기
@@ -102,9 +103,9 @@ sections:
         - name: 맛집 탐색 서비스
           tag: MJ  
     design:
-      columns: '2'
+      columns: '1'
       view: custom_card
-      flip_alt_rows: true
+      flip_alt_rows: false
       spacing: { padding: [30, 0, 30, 0] }
 
   - block: collection
