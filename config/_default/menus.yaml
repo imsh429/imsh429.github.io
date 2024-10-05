@@ -39,7 +39,7 @@ main:
     url: gallery
     weight: 420 
 
-  - name: Upcoming Events
+  - name: Events
     url: events/
     weight: 500
 
