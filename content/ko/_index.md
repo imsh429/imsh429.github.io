@@ -103,7 +103,7 @@ sections:
       columns: '2'
       view: masonry
       flip_alt_rows: true
-      spacing: { padding: [0, 0, 0, 0] }
+      spacing: { padding: [20, 0, 20, 0] }
 
   - block: collection
     content:
