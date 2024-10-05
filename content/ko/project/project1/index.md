@@ -4,5 +4,5 @@ summary: 자바를 이용해 쿠키런 오픈소스 코드를 변형하여 다�
 tags:
   - CR
 date: 2024-06-21
-external_link: http://github.com
+external_link: /project/project1
 ---
