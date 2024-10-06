@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 20
 
-title: 수강과목
+title: Courses
 subtitle:
 
 # Date format for experience
