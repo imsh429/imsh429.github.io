@@ -54,31 +54,18 @@ interests:
   - 소프트웨어 엔지니어링
 
 education:
-  - area: PhD Computer Science (AI Focus)
-    institution: Stanford University
-    date_start: 2015-09-01
-    date_end: 2019-06-30
+  - area: 컴퓨터인공지능학부
+    institution: 전북대학교
+    stidy_type: 학사 과정 (재학 중)
+    date_start: 2020-03-01
+    date_end: ''
     summary: |
-      Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Andrew Ng. Published 5 papers in NeurIPS and ICML, with 2 best paper awards.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com/thesis.pdf'
-  - area: MS Computer Science
-    institution: Carnegie Mellon University
-    date_start: 2013-09-01
-    date_end: 2015-05-31
-    summary: |
-      GPA: 4.0/4.0
-
-      Specialized in machine learning and robotics.
-  - area: BS Computer Science
-    institution: MIT
-    date_start: 2009-09-01
-    date_end: 2013-05-31
-    summary: |
-      GPA: 3.9/4.0
-
-      Minored in Mathematics. President of AI Club.
+      전북대학교 컴퓨터인공지능학부에서 인공지능, 소프트웨어 공학,
+      데이터베이스, 운영체제, 네트워크 등 컴퓨터공학 전반을 학습하고 있습니다.  
+      특히 백엔드 개발과 AI 융합 분야에 관심을 두고, 프로젝트와 연구 활동을 이어가고 있습니다.
+    #button:
+      #text: 'Read Thesis'
+      #url: 'https://example.com/thesis.pdf'
 
 work:
   - position: Senior AI Research Scientist
