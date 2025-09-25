@@ -48,10 +48,10 @@ profiles:
     url: https://orcid.org/0000-0002-1825-0097
 
 interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - 백엔드 개발
+  - 인공지능(AI)
+  - 인프라(클라우드, 서버 운영)
+  - 소프트웨어 엔지니어링
 
 education:
   - area: PhD Computer Science (AI Focus)
