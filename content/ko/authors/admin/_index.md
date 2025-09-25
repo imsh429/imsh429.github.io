@@ -68,14 +68,6 @@ education:
       #url: 'https://example.com/thesis.pdf'
 
 work:
-  - position: Senior AI Research Scientist
-    company_name: Meta AI
-    company_url: 'https://ai.meta.com/'
-    company_logo: ''
-    date_start: 2020-01-01
-    date_end: ''
-    summary: |2-
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
   - position: AI Research Intern
     company_name: OpenAI
     company_url: 'https://openai.com/'
@@ -153,4 +145,7 @@ awards:
       Recognized for contributions to scaling laws in deep learning.
 ---
 
-Alex Johnson is a Senior AI Research Scientist at Meta AI, where he leads groundbreaking work on large language models and multimodal systems. His research has been published in top conferences like NeurIPS and ICML, with over 10,000 citations. Alex is passionate about pushing the boundaries of AI while ensuring ethical development. Outside of work, he enjoys hiking in the Rockies, building custom PCs, and mentoring the next generation of AI talent.
+안녕하세요. 저는 전북대학교 컴퓨터인공지능학부에서 공부하며 **백엔드 개발자**로 성장하기 위해 노력하고 있습니다.  
+서버 및 데이터베이스 설계, API 구축, 클라우드 인프라에 관심이 많으며,  
+AI 기술을 실제 서비스와 융합해 가치 있는 솔루션을 만드는 것을 목표로 하고 있습니다.  
+끊임없는 학습과 실습을 통해 **신뢰할 수 있는 백엔드 엔지니어**로 나아가겠습니다.
