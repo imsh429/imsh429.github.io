@@ -37,6 +37,7 @@ header:
     logo:
       text: ''
       filename: "icon.png"
+    show_translations: true
 
 # Site footer
 footer:
