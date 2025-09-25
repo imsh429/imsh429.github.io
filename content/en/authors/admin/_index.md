@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 신서현
+title: Shin Seohyeon
 
 # Name pronunciation (optional)
 name_pronunciation: ''
