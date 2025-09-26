@@ -39,9 +39,8 @@ profiles:
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/imsh429
-  - icon: discord
-    icon_pack: fab
-    link: https://discord.com/users/1282685152795033673
+  - icon: brands/discord
+    url: https://discord.com/users/1282685152795033673
 
 
 interests:
