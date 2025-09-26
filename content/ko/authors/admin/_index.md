@@ -64,14 +64,15 @@ education:
       #url: 'https://example.com/thesis.pdf'
 
 work:
-  - position: AI Research Intern
-    company_name: OpenAI
-    company_url: 'https://openai.com/'
+  - position: 직무체험 개발 인턴
+    company_name: 케이테크
+    #company_url: 'https://openai.com/'
     company_logo: ''
-    date_start: 2019-06-01
-    date_end: 2019-12-31
+    date_start: 2025-06-30
+    date_end: 2025-08-14
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      교육 플랫폼 제작 프로젝트에 참여하여 기획 단계부터 기능 구현까지 경험하였습니다. 
+      사용자 관리, 학습 콘텐츠 관리 등 핵심 기능을 개발하며 실무 환경에서의 백엔드 개발 역량을 쌓았습니다.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
