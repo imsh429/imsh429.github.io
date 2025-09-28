@@ -77,13 +77,13 @@ work:
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  - name: Technical Stacks
     items:
-      - name: Python & PyTorch
+      - name: SpringBoot
         description: ''
         percent: 95
         icon: code-bracket
-      - name: Machine Learning
+      - name: Flask
         description: ''
         percent: 100
         icon: chart-bar
@@ -91,55 +91,27 @@ skills:
         description: ''
         percent: 85
         icon: cloud
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking in the Rockies
-        description: ''
-        percent: 80
-        icon: person-simple-walk
-      - name: Building Custom PCs
-        description: ''
-        percent: 90
-        icon: cpu-chip
-      - name: Sci-Fi Reading
-        description: ''
-        percent: 70
-        icon: book-open
 
 languages:
-  - name: English
+  - name: JAVA
     percent: 100
-  - name: Spanish
+  - name: PYTHON
     percent: 50
+  - name: C++
+    percent: 30
 
 # Awards.
 #   Add/remove as many awards below as you like.
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Best Paper Award
-    url: https://neurips.cc/
-    date: '2022-12-01'
-    awarder: NeurIPS
+  - title: 2025 JBNU SW·AI 경진대회
+    # url: https://neurips.cc/
+    date: '2025-06-02'
+    awarder: 전북대학교
     icon: hero/trophy
     summary: |
-      Awarded for groundbreaking work on efficient training of large models.
-  - title: AI Innovation Grant
-    url: https://www.nsf.gov/
-    date: '2021-06-15'
-    awarder: National Science Foundation
-    icon: hero/currency-dollar
-    summary: |
-      $500,000 grant for research in ethical AI development.
-  - title: Outstanding PhD Thesis
-    url: https://www.stanford.edu/
-    date: '2019-06-30'
-    awarder: Stanford University
-    icon: hero/academic-cap
-    summary: |
-      Recognized for contributions to scaling laws in deep learning.
+      생성형 AI(LLM)과 인간: 텍스트 판별 챌린지에서 수상하였습니다.
 ---
 
 안녕하세요. 저는 전북대학교 컴퓨터인공지능학부에서 공부하며 **백엔드 개발자**로 성장하기 위해 노력하고 있습니다.  
