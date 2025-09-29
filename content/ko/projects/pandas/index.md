@@ -1,15 +1,17 @@
 ---
-title: Pandas
-date: 2023-10-26
+title: ai기반 랜덤 여행지,여행경로 추천 플랫폼
+date: 2025-06-22
 links:
-  - type: site
-    url: https://github.com/pandas-dev/pandas
-tags:
-  - Hugo
-  - HugoBlox
-  - Markdown
+  - type: Frontend
+    url: https://github.com/imsh429/random-trip-frontend.git
+  - type: Backend
+    url: https://github.com/imsh429/random-trip-backend.git
+#tags:
+  #- Hugo
+  #- HugoBlox
+  #- Markdown
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+여행지 추천부터 최적 경로 생성까지. GPT와 Kakao API를 연동한 Spring Boot 기반 여행 추천 서비스를 개발하였습니다.
 
 <!--more-->
