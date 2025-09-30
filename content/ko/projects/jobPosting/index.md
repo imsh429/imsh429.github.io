@@ -1,15 +1,15 @@
 ---
-title: 채용 공고 백엔드
+title: 채용 공고 백엔드 구현
 date: 2024-06-22
 links:
-  - type: Backend
+  - type: site
     url: https://github.com/imsh429/random-trip-backend.git
-#tags:
-  #- Hugo
-  #- HugoBlox
-  #- Markdown
+tags:
+  - Python
+  - Flask
+  - Backend
 ---
 
-채용 공고를 크롤링 해 보여주는 백엔드를 구현하였습니다.
+채용 공고 데이터를 크롤링하여 사용자에게 제공하는 백엔드 서비스를 구현했습니다. 이 프로젝트는 사용자 인증, 채용 공고 관리, 지원서 처리 및 북마크 등 다양한 기능을 제공합니다.
 
 <!--more-->
