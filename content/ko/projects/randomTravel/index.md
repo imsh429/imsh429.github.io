@@ -6,10 +6,11 @@ links:
     url: https://github.com/imsh429/random-trip-frontend.git
   - type: Backend
     url: https://github.com/imsh429/random-trip-backend.git
-#tags:
-  #- Hugo
-  #- HugoBlox
-  #- Markdown
+tags:
+  - React
+  - SpringBoot
+  - Java
+  - TypeScript
 ---
 
 여행지 추천부터 최적 경로 생성까지. GPT와 Kakao API를 연동한 Spring Boot 기반 여행 추천 서비스를 개발하였습니다.
