@@ -1,5 +1,5 @@
 ---
-title: 채용 공고 백엔드 구현
+title: 채용 공고 플랫폼 백엔드 구현
 date: 2024-06-22
 links:
   - type: site
