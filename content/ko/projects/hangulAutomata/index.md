@@ -4,9 +4,9 @@ date: 2025-03-27
 links:
   - type: site
     url: https://github.com/imsh429/hangulAutomata.git
-#tags:
-  #- Hugo
-  #- HugoBlox
+tags:
+  - Python
+  - NLP
   #- Markdown
 ---
 
