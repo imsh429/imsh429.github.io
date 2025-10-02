@@ -3,8 +3,7 @@ title: 영화 서비스 개발
 date: 2025-03-27
 links:
   - type: site
-    url: https://github.com/imsh429/hangulAutomata.git
-tags:
+    url: https://github.com/imsh429/netflix-project.git
   - Vue
   #- NLP
   #- Markdown
