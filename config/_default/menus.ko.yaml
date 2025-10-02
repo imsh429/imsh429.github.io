@@ -19,12 +19,15 @@ main:
   - name: 소식
     url: /#news
     weight: 400
+    identifier: news
   - name: 뉴스
     url: /#news
     weight: 410
+    parent: news
   - name: 사진첩
     url: /#news
     weight: 420
+    parent: news
 
   - name: 문의
     url: /#papers
