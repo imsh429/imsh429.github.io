@@ -6,22 +6,34 @@
 main:
   - name: 자기소개
     url: /
-    weight: 10
-  - name: Papers
-    url: /#papers
-    weight: 50
-  - name: Talks
-    url: /#talks
-    weight: 60
-  - name: 소식
-    url: /#news
-    weight: 70
+    weight: 100
+
   - name: 경험
     url: experience/
-    weight: 20
+    weight: 200
+
   - name: 프로젝트
     url: projects/
-    weight: 30
-  - name: Courses
-    url: courses/
-    weight: 40
+    weight: 300
+
+  - name: 소식
+    url: /#news
+    weight: 400
+  - name: 뉴스
+    url: /#news
+    weight: 410
+  - name: 사진첩
+    url: /#news
+    weight: 420
+
+  - name: 문의
+    url: /#papers
+    weight: 500
+
+  #- name: Talks
+    #url: /#talks
+    #weight: 600
+
+  #- name: Courses
+    #url: courses/
+    #weight: 700
