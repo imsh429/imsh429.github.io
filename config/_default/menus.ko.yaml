@@ -30,7 +30,7 @@ main:
     parent: news
 
   - name: 문의
-    url: /#papers
+    url: contact/
     weight: 500
 
   #- name: Talks
