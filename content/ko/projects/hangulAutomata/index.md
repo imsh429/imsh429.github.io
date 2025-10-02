@@ -1,6 +1,7 @@
 ---
 title: 한글 오토마타 제작
 date: 2025-03-27
+weight: 5
 links:
   - type: site
     url: https://github.com/imsh429/hangulAutomata.git

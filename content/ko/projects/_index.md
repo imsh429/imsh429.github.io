@@ -17,6 +17,7 @@ sections:
       filters:
         folders:
           - projects
+      sort_by: "weight"
     design:
       view: article-grid
       fill_image: false

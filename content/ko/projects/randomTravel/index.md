@@ -1,6 +1,7 @@
 ---
 title: ai기반 랜덤 여행지,여행경로 추천 플랫폼
 date: 2025-06-22
+weight: 1
 links:
   - type: Frontend
     url: https://github.com/imsh429/random-trip-frontend.git

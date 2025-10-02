@@ -1,6 +1,7 @@
 ---
 title: 채용 공고 플랫폼 백엔드 구현
 date: 2024-06-22
+weight: 2
 links:
   - type: site
     url: https://github.com/imsh429/random-trip-backend.git

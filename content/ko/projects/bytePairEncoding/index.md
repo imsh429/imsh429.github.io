@@ -1,6 +1,7 @@
 ---
 title: BPE
 date: 2025-03-29
+weight: 6
 links:
   - type: site
     url: https://github.com/imsh429/bytePairEncoding.git
