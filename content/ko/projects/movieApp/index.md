@@ -5,6 +5,7 @@ weight: 3
 links:
   - type: site
     url: https://github.com/imsh429/netflix-project.git
+tags: 
   - Vue
   #- NLP
   #- Markdown
