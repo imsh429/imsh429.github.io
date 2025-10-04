@@ -7,8 +7,8 @@ sections:
     content:
       title: 연락처
       text: |
-        **이메일**: your.name@email.com  
-        **전화**: 010-1234-5678  
+        **이메일**: sh99429@naver.com  
+        **전화**: 010-2576-8297  
         **주소**: 전북 전주시 ○○로 00  
         **운영 시간**: Mon–Fri 10:00–18:00
 
