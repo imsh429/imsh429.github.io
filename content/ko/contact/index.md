@@ -1,36 +1,33 @@
 ---
 title: Contact
 type: landing
+
 sections:
-  - block: contact
-    id: contact
+  - block: markdown
     content:
       title: 연락처
-      subtitle: ''
-      text: ''
-      # 연락처 정보
-      email: sh99429@naver.com
-      phone: 010-1234-5678
-      address:
-        street: "567 백제대로"
-        city: 전주시
-        region: 전북
-        postcode: '54896'
-        country: 대한민국
-        country_code: KR
-      #directions:
-      autolink: true  # 이메일/전화 자동 링크
+      text: |
+        **이메일**: your.name@email.com  
+        **전화**: 010-1234-5678  
+        **주소**: 전북 전주시 ○○로 00  
+        **운영 시간**: Mon–Fri 10:00–18:00
 
-      # 문의 폼
-      form:
-        provider: netlify
-        netlify:
-          captcha: true            # Netlify 사용 시 스팸 방지
-
-      # 지도 좌표
-      coordinates:
-        latitude: '35.8469'
-        longitude: '127.1296'
+        아래 지도에서 위치를 확인할 수 있습니다.
     design:
-      columns: '1'   # '1' 또는 '2'
+      columns: 1
+
+  - block: markdown
+    content:
+      title: 오시는 길
+      text: |
+        <iframe
+          src="https://www.google.com/maps?q=35.8466,127.1295&z=15&output=embed"
+          width="100%"
+          height="420"
+          style="border:0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    design:
+      columns: 1
 ---
