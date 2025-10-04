@@ -20,7 +20,7 @@ sections:
       title: 오시는 길
       text: |
         <iframe
-          src="https://www.google.com/maps?q=35.8466,127.1295&z=15&output=embed"
+          src="https://www.google.com/maps?q=35.84633,127.12987&z=17&output=embed"
           width="100%"
           height="420"
           style="border:0"
