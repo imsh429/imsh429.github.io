@@ -16,7 +16,7 @@ sections:
 
   - block: markdown
     content:
-      title: 오시는 길
+      title: 위치
       text: |
         <iframe
           src="https://www.google.com/maps?q=전라북도+전주시+덕진구+백제대로+567+전북대학교+공과대학+7호관&z=17&output=embed"
