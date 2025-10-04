@@ -20,7 +20,7 @@ sections:
       title: 오시는 길
       text: |
         <iframe
-          src="https://www.google.com/maps?q=35.8469,127.1296&z=17&output=embed"
+          src="https://www.google.com/maps?q=전라북도+전주시+덕진구+백제대로+567+전북대학교+공과대학+7호관&z=17&output=embed"
           width="100%"
           height="420"
           style="border:0"
