@@ -11,7 +11,6 @@ sections:
         **전화**: 010-2576-8297  
         **주소**: (54896) 전라북도 전주시 덕진구 백제대로 567, 전북대학교 공과대학 7호관 
 
-        아래 지도에서 위치를 확인할 수 있습니다.
     design:
       columns: 1
 
@@ -22,7 +21,7 @@ sections:
         <iframe
           src="https://www.google.com/maps?q=전라북도+전주시+덕진구+백제대로+567+전북대학교+공과대학+7호관&z=17&output=embed"
           width="100%"
-          height="420"
+          height="600"
           style="border:0"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
