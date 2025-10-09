@@ -6,6 +6,9 @@ type: landing
 design:
   # Section spacing
   spacing: '5rem'
+  
+banner:
+  image: 'image.jpg'
 
 # Page sections
 sections:
