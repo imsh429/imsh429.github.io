@@ -26,7 +26,8 @@ sections:
     design:
       columns: 3
       icon_style: circle
-      background: light
+      background:
+        color: light
 
   # 2️⃣ 지도 블록 (Tailwind 공식 map 블록)
   - block: map
