@@ -1,16 +1,32 @@
 ---
-title: "Home"
+title: Contact
 type: landing
 
 sections:
-  - block: contact
-    id: contact
+  - block: markdown
     content:
-      title: Contact
-      # (연락처/링크 등 다른 필드는 필요에 따라)
-      coordinates:
-        latitude: '37.5665'     # 예: 서울 위도
-        longitude: '126.9780'   # 예: 서울 경도
+      title: 연락처
+      text: |
+        {{< icon name="envelope" pack="fas" >}} **이메일**: sh99429@naver.com  
+        {{< icon name="phone" pack="fas" >}} **전화**: 010-2576-8297  
+        {{< icon name="map-marker-alt" pack="fas" >}} **주소**: (54896) 전라북도 전주시 덕진구 백제대로 567, 전북대학교 공과대학 7호관 
+
     design:
-      columns: '1'
+      columns: 1
+
+  - block: markdown
+    content:
+      title: 위치
+      text: |
+        <iframe
+          src="https://www.google.com/maps?q=전라북도+전주시+덕진구+백제대로+567+전북대학교+공과대학+7호관&z=17&output=embed"
+          width="100%"
+          height="400"
+          style="border:0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    design:
+      columns: 1
+      full_width: true
 ---
