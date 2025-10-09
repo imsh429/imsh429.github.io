@@ -3,44 +3,44 @@ title: Contact
 type: landing
 
 sections:
-  - block: contact
-    id: contact
+  # 1️⃣ 연락처 정보 블록
+  - block: features
+    id: contact-info
     content:
       title: 연락처
-      text: |-
-        <span style="font-size:95%">
-        문의 사항이나 협업 제안이 있으시면 아래 연락처로 편하게 문의 주세요.
-        </span>
-      email: sh99429@naver.com
-      phone: 010-2576-8297
-      address:
-        street: 전북대학교 공과대학 7호관
-        city: 전주시
-        region: 전라북도
-        postcode: '54896'
-        country: 대한민국
-        country_code: KR
-      coordinates:
-        latitude: '35.84633'
-        longitude: '127.12987'
-      office_hours:
-        - 'Mon–Fri 10:00–18:00'
-      autolink: true
-
-      # (선택) 아이콘 버튼 링크 – 공식 규격
-      contact_links:
+      text: |
+        문의나 협업 제안이 있으신 경우 아래 정보를 통해 연락주세요.
+      items:
         - icon: envelope
           icon_pack: fas
-          name: 이메일 보내기
-          link: 'mailto:sh99429@naver.com'
+          name: 이메일
+          description: '[sh99429@naver.com](mailto:sh99429@naver.com)'
         - icon: phone
           icon_pack: fas
-          name: 전화 걸기
-          link: 'tel:010-2576-8297'
+          name: 전화번호
+          description: '010-2576-8297'
         - icon: map-marker-alt
           icon_pack: fas
-          name: 지도 열기
-          link: 'https://www.google.com/maps?q=35.84633,127.12987'
+          name: 주소
+          description: '(54896) 전라북도 전주시 덕진구 백제대로 567, 전북대학교 공과대학 7호관'
     design:
-      columns: '2'
+      columns: 3
+      icon_style: circle
+      background: light
+
+  # 2️⃣ 지도 블록 (Tailwind 공식 map 블록)
+  - block: map
+    id: location
+    content:
+      title: 위치
+      text: 전북대학교 공과대학 7호관 (College of Engineering Building 7)
+      map:
+        provider: mapnik   # 또는 'google' / 'mapbox' 중 하나
+        coordinates:
+          latitude: 35.84633
+          longitude: 127.12987
+        zoom: 17
+        height: 500
+    design:
+      full_width: true
 ---
