@@ -94,11 +94,11 @@ skills:
 
 languages:
   - name: JAVA
-    percent: 100
-  - name: PYTHON
     percent: 50
+  - name: PYTHON
+    percent: 40
   - name: C++
-    percent: 30
+    percent: 10
 
 # Awards.
 #   Add/remove as many awards below as you like.

@@ -28,6 +28,14 @@ sections:
       username: admin
     design:
       show_skill_percentage: false
+  - block: markdown
+    id: certifications
+    content:
+      title: Certifications
+      text: |
+        - **TOEIC** - 915점
+      design:
+        columns: "1"
   - block: resume-awards
     content:
       title: Awards
