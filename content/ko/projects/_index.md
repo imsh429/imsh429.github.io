@@ -12,14 +12,15 @@ sections:
     content:
       title: ""
       text: |
-        <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen -mt-6 md:-mt-8 lg:-mt-10">
-          <section class="relative w-full h-[16vh] md:h-[20vh] overflow-hidden">
+        <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen
+                    -mt-24 md:-mt-28 lg:-mt-32">
+          <section class="relative w-full h-[14vh] md:h-[18vh] overflow-hidden transform -translate-y-px">
             <img
               class="absolute inset-0 w-full h-full object-cover object-center"
-              src="/media/image.jpg" 
+              src="/media/image.jpg"  
               alt="Projects banner" loading="eager" decoding="async">
-            <!-- 필요 없으면 오버레이 줄을 삭제 -->
-            <div class="absolute inset-0 bg-black/20 md:bg-black/25"></div>
+            <!-- 필요하면 오버레이 사용/삭제 -->
+            <!-- <div class="absolute inset-0 bg-black/20 md:bg-black/25"></div> -->
           </section>
         </div>
   - block: collection
