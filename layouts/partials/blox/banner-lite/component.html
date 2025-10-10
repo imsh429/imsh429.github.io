@@ -1,21 +1,17 @@
 {{/* 
   banner-lite : Tailwind-only custom banner block (no JS/Preact)
 
-  사용법 (예시):
+  사용법 예:
   sections:
     - block: banner-lite
       content:
         image:
-          filename: 'sharing.png'   # static/media 또는 assets/media 에 위치
-        title: '프로젝트'
-        text: '제가 진행한 프로젝트들을 모아 소개합니다.'
+          filename: 'sharing.png'
+        title: '프로젝트'        # 선택
+        text: '간단 설명'         # 선택
       design:
-        height: 'h-[45vh] md:h-[60vh]'  # 배너 높이 (Tailwind 임의 클래스 가능)
-        image_darken: '0.25'            # 0~1 사이 문자열 (예: '0.25')
-
-  이미지 경로:
-  - static/media/  → /media/파일명  (가장 확실)
-  - assets/media/  → 빌드 시 /media/로 복사됨 (HugoBlox 기본)
+        height: 'h-[45vh] md:h-[60vh]'
+        image_darken: '0.25'
 */}}
 
 {{- $filename := "" -}}
@@ -23,8 +19,8 @@
   {{- $filename = . -}}
 {{- end -}}
 
-{{- $title := .content.title | default "" -}}
-{{- $text  := .content.text  | default "" -}}
+{{- $title  := .content.title | default "" -}}
+{{- $text   := .content.text  | default "" -}}
 {{- $height := .design.height | default "h-[40vh] md:h-[55vh]" -}}
 
 {{/* 어둡게 오버레이: Tailwind 투명도 클래스로 매핑 */}}
@@ -39,7 +35,6 @@
 {{- end -}}
 
 <section class="relative w-full {{ $height }} overflow-hidden rounded-2xl shadow-lg">
-  {{/* 배경 이미지: 인라인 style 대신 <img> + object-cover */}}
   {{- if $filename -}}
     <img
       class="absolute inset-0 w-full h-full object-cover"
@@ -52,10 +47,8 @@
     <div class="absolute inset-0 bg-neutral-700"></div>
   {{- end -}}
 
-  {{/* 어둡게 오버레이 */}}
   <div class="absolute inset-0 {{ $darkClass }}"></div>
 
-  {{/* 중앙 텍스트(옵션) */}}
   {{- if or $title $text -}}
     <div class="relative z-10 flex h-full w-full items-center justify-center px-6">
       <div class="max-w-3xl text-center">
