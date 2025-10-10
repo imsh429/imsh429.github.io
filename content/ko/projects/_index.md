@@ -7,7 +7,6 @@ design:
   spacing: '0'
 
 sections:
-  # 1) 풀블리드 얇은 배너 스트립 (상단 여백 완전 제거)
   - block: markdown
     content:
       title: ""
