@@ -49,7 +49,7 @@ sections:
 
             <!-- Slide 2 -->
             <div class="swiper-slide relative">
-              <img src="/media/image.jpg" alt="프로젝트 B" class="w-full h-full object-cover">
+              <img src="/media/image2.jpg" alt="프로젝트 B" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-slate-900/40"></div>
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
@@ -82,7 +82,7 @@ sections:
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
           // 바꾸고 싶은 자동 전환 간격(ms)을 여기서 설정
-          const SLIDE_INTERVAL_MS = 3000; // 예: 3초
+          const SLIDE_INTERVAL_MS = 2000; // 예: 3초
 
           const swiper = new Swiper('.mySwiper', {
             loop: true,
