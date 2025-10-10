@@ -11,6 +11,9 @@ banner:
   
 # Page sections
 sections:
+  - block: hero
+    content:
+      title: 프로젝트
   - block: collection
     content:
       title: 프로젝트
