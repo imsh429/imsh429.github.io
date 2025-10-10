@@ -1,62 +1,73 @@
 {{/* 
-  banner-lite : Tailwind-only custom banner block (no JS/Preact)
+  banner-lite : Tailwind-only banner (no JS/Preact)
 
-  사용법 예:
   sections:
     - block: banner-lite
       content:
         image:
-          filename: 'sharing.png'
-        title: '프로젝트'        # 선택
-        text: '간단 설명'         # 선택
+          filename: 'sharing.png'  # static/media/sharing.png 권장
+        title: '프로젝트'           # (선택)
+        # text: '간단 설명'         # (선택)
       design:
-        height: 'h-[45vh] md:h-[60vh]'
-        image_darken: '0.25'
+        height: 'h-[28vh] md:h-[36vh]'  # ✅ 더 낮은 기본 높이
+        image_darken: '0.2'             # 0~1 (기본: 0.2)
+        align: 'center'                 # 'left' | 'center' | 'right' (선택)
 */}}
 
 {{- $filename := "" -}}
-{{- with .content.image.filename -}}
-  {{- $filename = . -}}
-{{- end -}}
+{{- with .content.image.filename -}} {{- $filename = . -}} {{- end -}}
 
 {{- $title  := .content.title | default "" -}}
 {{- $text   := .content.text  | default "" -}}
-{{- $height := .design.height | default "h-[40vh] md:h-[55vh]" -}}
+{{- $height := .design.height | default "h-[28vh] md:h-[36vh]" -}}
 
-{{/* 어둡게 오버레이: Tailwind 투명도 클래스로 매핑 */}}
-{{- $dark := .design.image_darken | default "0.25" -}}
-{{- $darkClass := "bg-black/25" -}}
-{{- if ge (float $dark) 0.45 -}}
-  {{- $darkClass = "bg-black/50" -}}
-{{- else if ge (float $dark) 0.35 -}}
-  {{- $darkClass = "bg-black/40" -}}
-{{- else if ge (float $dark) 0.25 -}}
-  {{- $darkClass = "bg-black/30" -}}
+{{/* 어둡게 오버레이 강도 매핑(기본 더 옅게) */}}
+{{- $dark := .design.image_darken | default "0.2" -}}
+{{- $darkClass := "bg-black/10" -}}
+{{- if ge (float $dark) 0.45 -}} {{- $darkClass = "bg-black/50" -}}
+{{- else if ge (float $dark) 0.35 -}} {{- $darkClass = "bg-black/40" -}}
+{{- else if ge (float $dark) 0.25 -}} {{- $darkClass = "bg-black/30" -}}
+{{- else if ge (float $dark) 0.15 -}} {{- $darkClass = "bg-black/20" -}}
 {{- end -}}
 
-<section class="relative w-full {{ $height }} overflow-hidden rounded-2xl shadow-lg">
+{{/* 텍스트 정렬 옵션 */}}
+{{- $align := .design.align | default "center" -}}
+{{- $justify := "justify-center text-center" -}}
+{{- if eq $align "left"  -}} {{- $justify = "justify-start text-left" -}} {{- end -}}
+{{- if eq $align "right" -}} {{- $justify = "justify-end text-right"  -}} {{- end -}}
+
+<section class="relative w-full {{ $height }} overflow-hidden">
   {{- if $filename -}}
     <img
       class="absolute inset-0 w-full h-full object-cover"
       src="{{ (printf "/media/%s" $filename) | relURL }}"
-      alt="{{ $title | default "banner" }}"
+      alt="{{ cond (ne $title "") $title "banner" }}"
       loading="eager"
       decoding="async"
     />
   {{- else -}}
-    <div class="absolute inset-0 bg-neutral-700"></div>
+    {{/* 디버그: 파일명 누락/경로오류 시 눈에 띄게 안내 */}}
+    <div class="absolute inset-0 flex items-center justify-center bg-neutral-700">
+      <span class="text-white/90 text-sm md:text-base">
+        banner-lite: 이미지가 비었습니다. static/media/{{ "<파일명>" }} 를 두고 filename을 지정하세요.
+      </span>
+    </div>
   {{- end -}}
 
   <div class="absolute inset-0 {{ $darkClass }}"></div>
 
   {{- if or $title $text -}}
-    <div class="relative z-10 flex h-full w-full items-center justify-center px-6">
-      <div class="max-w-3xl text-center">
+    <div class="relative z-10 flex h-full w-full items-center px-6 md:px-10 {{ $justify }}">
+      <div class="max-w-4xl">
         {{- if $title -}}
-          <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">{{ $title }}</h1>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white drop-shadow-sm mb-2 md:mb-3">
+            {{ $title }}
+          </h1>
         {{- end -}}
         {{- if $text -}}
-          <p class="text-white/90 text-base md:text-lg leading-relaxed">{{ $text }}</p>
+          <p class="text-white/90 text-sm md:text-lg leading-relaxed drop-shadow">
+            {{ $text }}
+          </p>
         {{- end -}}
       </div>
     </div>

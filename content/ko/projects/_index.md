@@ -10,11 +10,12 @@ sections:
   - block: banner-lite
     content:
       image:
-        filename: 'sharing.png'
+        filename: 'image.jpg'
       title: '프로젝트'
     design:
-      height: 'h-[45vh] md:h-[60vh]'
-      image_darken: '0.25'
+      height: 'h-[28vh] md:h-[36vh]'
+      image_darken: '0.2'
+      align: 'center'
       
   - block: collection
     content:

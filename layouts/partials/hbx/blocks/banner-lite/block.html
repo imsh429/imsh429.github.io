@@ -1,12 +1,10 @@
 {{/* 
   hbx/blocks/banner-lite/block.html
-  - Landing renderer가 찾는 엔트리 포인트
-  - 우리 컴포넌트(blox/banner-lite/component.html)에 content/design만 넘김
+  - 랜딩 엔진 엔트리 포인트
+  - 풀폭(에지-투-에지)로 렌더: 래퍼 div 제거
 */}}
 
 {{- $content := .content | default dict -}}
 {{- $design  := .design  | default dict -}}
 
-<div class="mx-auto w-full max-w-screen-xl px-6">
-  {{ partial "blox/banner-lite/component.html" (dict "content" $content "design" $design) }}
-</div>
+{{ partial "blox/banner-lite/component.html" (dict "content" $content "design" $design) }}
