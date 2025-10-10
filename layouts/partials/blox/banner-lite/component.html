@@ -5,13 +5,13 @@
     - block: banner-lite
       content:
         image:
-          filename: 'sharing.png'  # static/media/sharing.png 권장
-        title: '프로젝트'           # (선택)
-        # text: '간단 설명'         # (선택)
+          filename: 'sharing.png'     # static/media/sharing.png 권장
+        title: '프로젝트'              # (선택)
+        # text: '간단 설명'            # (선택)
       design:
-        height: 'h-[28vh] md:h-[36vh]'  # ✅ 더 낮은 기본 높이
-        image_darken: '0.2'             # 0~1 (기본: 0.2)
-        align: 'center'                 # 'left' | 'center' | 'right' (선택)
+        height: 'h-[28vh] md:h-[36vh]' # 기본 높이
+        image_darken: '0.2'            # 0~1
+        align: 'center'                # 'left' | 'center' | 'right'
 */}}
 
 {{- $filename := "" -}}
@@ -21,7 +21,7 @@
 {{- $text   := .content.text  | default "" -}}
 {{- $height := .design.height | default "h-[28vh] md:h-[36vh]" -}}
 
-{{/* 어둡게 오버레이 강도 매핑(기본 더 옅게) */}}
+{{/* 어둡게 오버레이 강도 매핑 */}}
 {{- $dark := .design.image_darken | default "0.2" -}}
 {{- $darkClass := "bg-black/10" -}}
 {{- if ge (float $dark) 0.45 -}} {{- $darkClass = "bg-black/50" -}}
@@ -36,17 +36,27 @@
 {{- if eq $align "left"  -}} {{- $justify = "justify-start text-left" -}} {{- end -}}
 {{- if eq $align "right" -}} {{- $justify = "justify-end text-right"  -}} {{- end -}}
 
+{{/* ▶ 이미지 경로 결정: assets/media 우선, 없으면 static/media 폴백
+     (relURL 제거하여 /ko 같은 언어 prefix가 붙지 않도록 고정 경로 사용) */}}
+{{- $img := cond (ne $filename "") (resources.Get (printf "media/%s" $filename)) nil -}}
+{{- $src := "" -}}
+{{- if $img -}}
+  {{- $src = $img.RelPermalink -}}
+{{- else if ne $filename "" -}}
+  {{- $src = printf "/media/%s" $filename -}}
+{{- end -}}
+
 <section class="relative w-full {{ $height }} overflow-hidden">
-  {{- if $filename -}}
+  {{- if ne $src "" -}}
     <img
-      class="absolute inset-0 w-full h-full object-cover"
-      src="{{ (printf "/media/%s" $filename) | relURL }}"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      src="{{ $src }}"
       alt="{{ cond (ne $title "") $title "banner" }}"
       loading="eager"
       decoding="async"
     />
   {{- else -}}
-    {{/* 디버그: 파일명 누락/경로오류 시 눈에 띄게 안내 */}}
+    {{/* 디버그: 파일명 누락/경로오류 시 안내 */}}
     <div class="absolute inset-0 flex items-center justify-center bg-neutral-700">
       <span class="text-white/90 text-sm md:text-base">
         banner-lite: 이미지가 비었습니다. static/media/{{ "<파일명>" }} 를 두고 filename을 지정하세요.
