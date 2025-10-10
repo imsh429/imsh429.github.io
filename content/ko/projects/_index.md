@@ -17,7 +17,7 @@ sections:
           <section class="relative w-full h-[14vh] md:h-[18vh] overflow-hidden">
             <img
               class="absolute inset-0 w-full h-full object-cover object-center"
-              src="/media/banner.jpg"  <!-- static/media/banner.jpg -->
+              src="/media/image.jpg"
               alt="Projects banner" loading="eager" decoding="async">
             <!-- 필요하면 오버레이 유지/삭제 -->
             <!-- <div class="absolute inset-0 bg-black/20 md:bg-black/25"></div> -->
