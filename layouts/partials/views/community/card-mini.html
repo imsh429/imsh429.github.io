@@ -1,4 +1,4 @@
-{{/* community/card-mini : one item, compact */}}
+{{/* community/card-mini : one item, square thumbnail & slightly larger */}}
 {{ $item := .item }}
 {{ if not $item }}{{ else }}
 
@@ -26,34 +26,37 @@
   {{ end }}
   {{ $alt := ($item.Params.image_alt | default ($item.Title | plainify)) }}
 
-  <article class="rounded-lg overflow-hidden shadow">
-    {{ if $imgURL }}
-      <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="block">
-        <img class="w-full h-28 object-cover" src="{{ $imgURL }}" alt="{{ $alt }}" loading="lazy">
-      </a>
-    {{ else }}
-      <div class="w-full h-28 bg-gray-100"></div>
-    {{ end }}
+  <article class="rounded-xl overflow-hidden shadow">
+    <!-- 정사각형 썸네일 (aspect-square) + 조금 더 큰 사이즈 -->
+    <div class="relative w-full aspect-square bg-gray-100">
+      {{ if $imgURL }}
+        <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+          <img
+            class="absolute inset-0 w-full h-full object-cover"
+            src="{{ $imgURL }}" alt="{{ $alt }}" loading="lazy">
+        </a>
+      {{ end }}
+    </div>
 
-    <div class="p-3">
-      <h3 class="text-sm font-semibold leading-snug line-clamp-2">
+    <div class="p-4">
+      <h3 class="text-base font-semibold leading-snug">
         <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
       </h3>
 
-      {{/* 요약: 작은 카드용으로 짧게 */}}
+      {{/* 요약: 살짝 여유 있게 */}}
       {{ $summary := "" }}
       {{ if $item.Params.summary }}
-        {{ $summary = $item.Params.summary | markdownify | emojify | truncate 90 }}
+        {{ $summary = $item.Params.summary | markdownify | emojify | truncate 110 }}
       {{ else if $item.Params.abstract }}
-        {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 90 }}
+        {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 110 }}
       {{ else if $item.Summary }}
-        {{ $summary = $item.Summary | plainify | truncate 90 }}
+        {{ $summary = $item.Summary | plainify | truncate 110 }}
       {{ end }}
       {{ with $summary }}
-        <p class="mt-1 text-xs text-gray-600">{{ . }}</p>
+        <p class="mt-2 text-sm text-gray-600">{{ . }}</p>
       {{ end }}
 
-      <div class="mt-2 text-[11px] text-gray-500 flex flex-wrap gap-x-3 gap-y-1">
+      <div class="mt-2 text-xs text-gray-500 flex flex-wrap gap-x-3 gap-y-1">
         {{ if and (templates.Exists "partials/page_metadata_authors.html") $item.Params.authors }}
           <span>{{ partial "page_metadata_authors" $item }}</span>
         {{ end }}
