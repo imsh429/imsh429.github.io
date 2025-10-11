@@ -1,4 +1,4 @@
-{{/* community/card-mini : one item, square thumbnail & slightly larger */}}
+{{/* community/card-mini : image-only, small square thumbnail */}}
 {{ $item := .item }}
 {{ if not $item }}{{ else }}
 
@@ -10,12 +10,15 @@
     {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
   {{ end }}
 
-  {{/* 이미지: featured.* → 번들 첫 이미지 → 프론트매터 문자열 경로 */}}
+  {{/* 이미지: featured.* → 번들 첫 이미지 → 프론트매터 문자열 경로 (안전, nil 호출 없음) */}}
   {{ $imgURL := "" }}
   {{ with ($item.Resources.GetMatch "featured*") }}{{ $imgURL = .RelPermalink }}{{ end }}
   {{ if not $imgURL }}
     {{ $imgs := ($item.Resources.ByType "image") }}
-    {{ if gt (len $imgs) 0 }}{{ $img := index $imgs 0 }}{{ $imgURL = $img.RelPermalink }}{{ end }}
+    {{ if gt (len $imgs) 0 }}
+      {{ $img := index $imgs 0 }}
+      {{ $imgURL = $img.RelPermalink }}
+    {{ end }}
   {{ end }}
   {{ if not $imgURL }}
     {{ $pm1 := $item.Params.image }}
@@ -24,46 +27,23 @@
     {{ $pm4 := $item.Params.featured_image }}
     {{ with (or $pm1 (or $pm2 (or $pm3 $pm4))) }}{{ $imgURL = . }}{{ end }}
   {{ end }}
+
   {{ $alt := ($item.Params.image_alt | default ($item.Title | plainify)) }}
 
-  <article class="rounded-xl overflow-hidden shadow">
-    <!-- 정사각형 썸네일 (aspect-square) + 조금 더 큰 사이즈 -->
-    <div class="relative w-full aspect-square bg-gray-100">
-      {{ if $imgURL }}
-        <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+  <article class="rounded-xl overflow-hidden">
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="block group" aria-label="{{ $item.Title }}">
+      <!-- 작게 보이도록 고정 폭 + 정사각형. 필요하면 아래 w-* 값만 줄이거나 늘리면 됩니다. -->
+      <div class="relative w-28 sm:w-32 lg:w-36 aspect-square mx-auto rounded-lg overflow-hidden shadow">
+        {{ if $imgURL }}
           <img
-            class="absolute inset-0 w-full h-full object-cover"
-            src="{{ $imgURL }}" alt="{{ $alt }}" loading="lazy">
-        </a>
-      {{ end }}
-    </div>
-
-    <div class="p-4">
-      <h3 class="text-base font-semibold leading-snug">
-        <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
-      </h3>
-
-      {{/* 요약: 살짝 여유 있게 */}}
-      {{ $summary := "" }}
-      {{ if $item.Params.summary }}
-        {{ $summary = $item.Params.summary | markdownify | emojify | truncate 110 }}
-      {{ else if $item.Params.abstract }}
-        {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 110 }}
-      {{ else if $item.Summary }}
-        {{ $summary = $item.Summary | plainify | truncate 110 }}
-      {{ end }}
-      {{ with $summary }}
-        <p class="mt-2 text-sm text-gray-600">{{ . }}</p>
-      {{ end }}
-
-      <div class="mt-2 text-xs text-gray-500 flex flex-wrap gap-x-3 gap-y-1">
-        {{ if and (templates.Exists "partials/page_metadata_authors.html") $item.Params.authors }}
-          <span>{{ partial "page_metadata_authors" $item }}</span>
-        {{ end }}
-        {{ with $item.Date }}
-          <time datetime="{{ . }}">{{ . | time.Format (site.Params.locale.date_format | default ":date_long") }}</time>
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+            src="{{ $imgURL }}"
+            alt="{{ $alt }}"
+            loading="lazy">
+        {{ else }}
+          <div class="absolute inset-0 bg-gray-100"></div>
         {{ end }}
       </div>
-    </div>
+    </a>
   </article>
 {{ end }}
