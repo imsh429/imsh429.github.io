@@ -106,20 +106,11 @@ sections:
     design:
       view: article-grid
       columns: 2
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ''
-      filters:
-        folders:
-          - publications
-        exclude_featured: false
-    design:
-      view: citation
+
   - block: collection
     id: talks
     content:
-      title: Recent & Upcoming Talks
+      title: 뉴스
       filters:
         folders:
           - events
@@ -128,7 +119,7 @@ sections:
   - block: collection
     id: news
     content:
-      title: 뉴스
+      title: 갤러리
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...
