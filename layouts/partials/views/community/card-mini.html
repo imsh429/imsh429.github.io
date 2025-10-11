@@ -1,47 +1,44 @@
-<div class="cards-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {{ range .Pages }}
-    {{ $item := . }}
-    {{ $link := $item.RelPermalink }}
-    {{ $target := "" }}
-    {{ if $item.Params.external_link }}
-      {{ $link = $item.Params.external_link }}
-      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ $item := .item }}
+{{ $link := $item.RelPermalink }}
+{{ $target := "" }}
+{{ if $item.Params.external_link }}
+  {{ $link = $item.Params.external_link }}
+  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ end }}
+
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+<article class="rounded-xl overflow-hidden shadow">
+  {{ with $resource }}
+    {{ $fp := $item.Params.image.focal_point | default "Center" }}
+    {{ $img := .Fill (printf "600x338 %s" $fp) }}
+    {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="block">
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+           alt="{{ $item.Title | plainify }}" class="w-full h-40 object-cover">
+    </a>
+  {{ end }}
+
+  <div class="p-4">
+    <h3 class="text-base font-semibold">
+      <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
+    </h3>
+
+    {{ $summary := "" }}
+    {{ if $item.Params.summary }}
+      {{ $summary = $item.Params.summary | markdownify | emojify }}
+    {{ else if $item.Params.abstract }}
+      {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 135 }}
+    {{ else if $item.Summary }}
+      {{ $summary = $item.Summary }}
+    {{ end }}
+    {{ with $summary }}
+      <p class="text-gray-600 mt-1">{{ . | plainify }}</p>
     {{ end }}
 
-    <div class="card shadow-lg rounded-lg overflow-hidden">
-      {{/* 대표 이미지 */}}
-      {{ $resource := partial "functions/get_featured_image.html" $item }}
-      {{ with $resource }}
-        <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="block">
-          <img src="{{ .RelPermalink }}" alt="{{ $item.Title }}" class="w-full h-48 object-cover">
-        </a>
-      {{ end }}
-
-      <div class="p-4">
-        <h3 class="text-lg font-semibold">
-          <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
-        </h3>
-
-        {{/* 요약 */}}
-        {{ $summary := "" }}
-        {{ if $item.Params.summary }}
-          {{ $summary = $item.Params.summary | markdownify | emojify }}
-        {{ else if $item.Params.abstract }}
-          {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 135 }}
-        {{ else if $item.Summary }}
-          {{ $summary = $item.Summary }}
-        {{ end }}
-        {{ if $summary }}
-          <p class="text-gray-600 mt-2">{{ $summary }}</p>
-        {{ end }}
-
-        {{/* 저자 */}}
-        {{ if $item.Params.authors }}
-          <div class="text-sm text-gray-500 mt-4">
-            {{ partial "page_metadata_authors" $item }}
-          </div>
-        {{ end }}
+    {{ if $item.Params.authors }}
+      <div class="mt-3 text-sm text-gray-500">
+        {{ partial "page_metadata_authors" $item }}
       </div>
-    </div>
-  {{ end }}
-</div>
+    {{ end }}
+  </div>
+</article>
