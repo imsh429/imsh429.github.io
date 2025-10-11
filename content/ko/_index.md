@@ -128,7 +128,7 @@ sections:
   - block: collection
     id: news
     content:
-      title: Recent News
+      title: 뉴스
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...
@@ -150,7 +150,7 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: card
+      view: community/card-wide
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
