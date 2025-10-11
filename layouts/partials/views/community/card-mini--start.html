@@ -1,8 +1,2 @@
-{{/* wrapper start for community/card-mini : full-width, 3 columns by default */}}
-{{ $cols := printf "%v" (or .config.columns "3") }}
-{{ $class := "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" }}
-{{ if eq $cols "1" }}{{ $class = "grid grid-cols-1 gap-4" }}{{ end }}
-{{ if eq $cols "2" }}{{ $class = "grid grid-cols-1 md:grid-cols-2 gap-4" }}{{ end }}
-{{ if eq $cols "3" }}{{ $class = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" }}{{ end }}
-{{ if eq $cols "4" }}{{ $class = "grid grid-cols-2 md:grid-cols-4 gap-4" }}{{ end }}
-<div class="w-full {{ $class }}">
+{{/* community/card-mini wrapper: denser grid, fills width */}}
+<div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
