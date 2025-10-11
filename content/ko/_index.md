@@ -124,7 +124,7 @@ sections:
         folders:
           - events
     design:
-      view: card
+      view: community/card-wide
   - block: collection
     id: news
     content:
