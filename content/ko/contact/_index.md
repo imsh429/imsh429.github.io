@@ -22,9 +22,9 @@ sections:
     content:
       title: 연락처
       text: |
-        {{< icon name="envelope" pack="fas" >}} **이메일**: sh99429@naver.com  
-        {{< icon name="phone" pack="fas" >}} **전화**: 010-2576-8297  
-        {{< icon name="map-marker-alt" pack="fas" >}} **주소**: (54896) 전라북도 전주시 덕진구 백제대로 567, 전북대학교 공과대학 7호관 
+        <i class="fa-solid fa-envelope" style="margin-right:.4rem;"></i> **이메일**: <a href="mailto:sh99429@naver.com">sh99429@naver.com</a>  
+        <i class="fa-solid fa-phone" style="margin-right:.4rem;"></i> **전화**: <a href="tel:010-2576-8297">010-2576-8297</a>  
+        <i class="fa-solid fa-map-location-dot" style="margin-right:.4rem;"></i> **주소**: (54896) 전라북도 전주시 덕진구 백제대로 567, 전북대학교 공과대학 7호관
 
     design:
       columns: 1
