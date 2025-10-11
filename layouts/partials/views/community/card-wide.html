@@ -1,10 +1,8 @@
-{{/* community/card-wide : renders exactly ONE item passed as .item */}}
+{{/* community/card-wide : SMOKE TEST - no image, no external partial */}}
 {{ $item := .item }}
 {{ if not $item }}
-  {{ warnf "community/card-wide: missing .item (block=%v page=%v)" .block .page }}
+  {{ errorf "community/card-wide: .item is nil (block=%v page=%v)" .block .page }}
 {{ else }}
-
-  {{/* link/target */}}
   {{ $link := $item.RelPermalink }}
   {{ $target := "" }}
   {{ with $item.Params.external_link }}
@@ -12,24 +10,9 @@
     {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
   {{ end }}
 
-  {{/* featured image (nil-safe) */}}
-  {{ $res := partial "functions/get_featured_image.html" $item }}
-
   <article class="flex flex-col md:flex-row rounded-xl overflow-hidden shadow">
     <div class="md:w-48 md:flex-shrink-0">
-      {{ with $res }}
-        {{ $fp := $item.Params.image.focal_point | default "Center" }}
-        {{ $img := .Fill (printf "655x655 %s" $fp) }}
-        {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
-        <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
-          <img class="w-full h-40 md:h-full object-cover"
-               src="{{ $img.RelPermalink }}"
-               width="{{ $img.Width }}" height="{{ $img.Height }}"
-               alt="{{ $item.Title | plainify }}" loading="lazy">
-        </a>
-      {{ else }}
-        <div class="w-full h-40 md:h-full bg-gray-100"></div>
-      {{ end }}
+      <div class="w-full h-40 md:h-full bg-gray-100"></div>
     </div>
 
     <div class="p-5 md:flex-1">
@@ -37,7 +20,6 @@
         <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
       </h3>
 
-      {{/* summary (nil-safe) */}}
       {{ $summary := "" }}
       {{ if $item.Params.summary }}
         {{ $summary = $item.Params.summary | markdownify | emojify }}
