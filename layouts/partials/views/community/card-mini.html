@@ -1,0 +1,66 @@
+{{/* community/card-mini : one item, compact */}}
+{{ $item := .item }}
+{{ if not $item }}{{ else }}
+
+  {{/* 링크/타겟 */}}
+  {{ $link := $item.RelPermalink }}
+  {{ $target := "" }}
+  {{ with $item.Params.external_link }}
+    {{ $link = . }}
+    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+  {{ end }}
+
+  {{/* 이미지: featured.* → 번들 첫 이미지 → 프론트매터 문자열 경로 */}}
+  {{ $imgURL := "" }}
+  {{ with ($item.Resources.GetMatch "featured*") }}{{ $imgURL = .RelPermalink }}{{ end }}
+  {{ if not $imgURL }}
+    {{ $imgs := ($item.Resources.ByType "image") }}
+    {{ if gt (len $imgs) 0 }}{{ $img := index $imgs 0 }}{{ $imgURL = $img.RelPermalink }}{{ end }}
+  {{ end }}
+  {{ if not $imgURL }}
+    {{ $pm1 := $item.Params.image }}
+    {{ $pm2 := $item.Params.header.image }}
+    {{ $pm3 := $item.Params.cover.image }}
+    {{ $pm4 := $item.Params.featured_image }}
+    {{ with (or $pm1 (or $pm2 (or $pm3 $pm4))) }}{{ $imgURL = . }}{{ end }}
+  {{ end }}
+  {{ $alt := ($item.Params.image_alt | default ($item.Title | plainify)) }}
+
+  <article class="rounded-lg overflow-hidden shadow">
+    {{ if $imgURL }}
+      <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="block">
+        <img class="w-full h-28 object-cover" src="{{ $imgURL }}" alt="{{ $alt }}" loading="lazy">
+      </a>
+    {{ else }}
+      <div class="w-full h-28 bg-gray-100"></div>
+    {{ end }}
+
+    <div class="p-3">
+      <h3 class="text-sm font-semibold leading-snug line-clamp-2">
+        <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
+      </h3>
+
+      {{/* 요약: 작은 카드용으로 짧게 */}}
+      {{ $summary := "" }}
+      {{ if $item.Params.summary }}
+        {{ $summary = $item.Params.summary | markdownify | emojify | truncate 90 }}
+      {{ else if $item.Params.abstract }}
+        {{ $summary = $item.Params.abstract | markdownify | emojify | truncate 90 }}
+      {{ else if $item.Summary }}
+        {{ $summary = $item.Summary | plainify | truncate 90 }}
+      {{ end }}
+      {{ with $summary }}
+        <p class="mt-1 text-xs text-gray-600">{{ . }}</p>
+      {{ end }}
+
+      <div class="mt-2 text-[11px] text-gray-500 flex flex-wrap gap-x-3 gap-y-1">
+        {{ if and (templates.Exists "partials/page_metadata_authors.html") $item.Params.authors }}
+          <span>{{ partial "page_metadata_authors" $item }}</span>
+        {{ end }}
+        {{ with $item.Date }}
+          <time datetime="{{ . }}">{{ . | time.Format (site.Params.locale.date_format | default ":date_long") }}</time>
+        {{ end }}
+      </div>
+    </div>
+  </article>
+{{ end }}
