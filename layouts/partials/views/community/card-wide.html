@@ -1,10 +1,8 @@
-{{/* community/card-wide : renders ONE item with robust image discovery */}}
+{{/* community/card-wide : robust, renders ONE item */}}
 {{ $item := .item }}
-{{ if not $item }}
-  {{/* collection이 아이템을 안 넘기면 아무 것도 출력하지 않음 */}}
-{{ else }}
+{{ if not $item }}{{/* nothing to render */}}{{ else }}
 
-  {{/* 링크/타겟 */}}
+  {{/* link/target */}}
   {{ $link := $item.RelPermalink }}
   {{ $target := "" }}
   {{ with $item.Params.external_link }}
@@ -12,56 +10,52 @@
     {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
   {{ end }}
 
-  {{/* 이미지 소스 저장용 Scratch (재할당 편의) */}}
-  {{ $s := newScratch }}
-  {{ $s.Set "imgURL" "" }}
-  {{ $s.Set "imgW" 0 }}
-  {{ $s.Set "imgH" 0 }}
+  {{/* ---- 이미지 소스 판별 ---- */}}
+  {{ $imgURL := "" }}
+  {{ $imgW := 0 }}
+  {{ $imgH := 0 }}
 
-  {{/* 1) HBX 대표 이미지 partial (blox-core → functions 순서로 시도) */}}
-  {{ $res := partial "blox-core/functions/get_featured_image.html" $item }}
-  {{ if not $res }}
+  {{/* 1) HBX 대표 이미지 partial (있을 때만 호출) */}}
+  {{ $res := nil }}
+  {{ if templates.Exists "partials/blox-core/functions/get_featured_image.html" }}
+    {{ $res = partial "blox-core/functions/get_featured_image.html" $item }}
+  {{ else if templates.Exists "partials/functions/get_featured_image.html" }}
     {{ $res = partial "functions/get_featured_image.html" $item }}
   {{ end }}
 
   {{ if $res }}
-    {{/* HBX 이미지 파이프라인: 페이지 번들 리소스에만 사용 가능 */}}
     {{ $fp := $item.Params.image.focal_point | default "Center" }}
     {{ $img := $res.Fill (printf "655x655 %s" $fp) }}
     {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
-    {{ $s.Set "imgURL" $img.RelPermalink }}
-    {{ $s.Set "imgW"   $img.Width }}
-    {{ $s.Set "imgH"   $img.Height }}
+    {{ $imgURL = $img.RelPermalink }}
+    {{ $imgW = $img.Width }}
+    {{ $imgH = $img.Height }}
   {{ else }}
-    {{/* 2) 프론트매터 경로(정적/원격 URL) 시도 */}}
+    {{/* 2) 프론트매터 문자열 경로(정적/원격) */}}
     {{ with or $item.Params.image $item.Params.header.image $item.Params.cover.image $item.Params.featured_image }}
-      {{ $s.Set "imgURL" . }}
+      {{ $imgURL = . }}
     {{ end }}
-    {{/* 3) 페이지 번들 내부 임의 첫 이미지 (포스트 폴더에 이미지가 있을 때) */}}
-    {{ if eq ($s.Get "imgURL") "" }}
+    {{/* 3) 페이지 번들의 첫 이미지 */}}
+    {{ if not $imgURL }}
       {{ with (first 1 ($item.Resources.ByType "image")) | first }}
-        {{ $s.Set "imgURL" .RelPermalink }}
-        {{ $s.Set "imgW"   .Width }}
-        {{ $s.Set "imgH"   .Height }}
+        {{ $imgURL = .RelPermalink }}
+        {{ $imgW = .Width }}
+        {{ $imgH = .Height }}
       {{ end }}
     {{ end }}
   {{ end }}
 
-  {{ $imgURL := $s.Get "imgURL" }}
-  {{ $imgW   := $s.Get "imgW" }}
-  {{ $imgH   := $s.Get "imgH" }}
-  {{ $alt    := ($item.Params.image_alt | default ($item.Title | plainify)) }}
+  {{ $alt := ($item.Params.image_alt | default ($item.Title | plainify)) }}
 
   <article class="flex flex-col md:flex-row rounded-xl overflow-hidden shadow">
     <div class="md:w-48 md:flex-shrink-0">
       {{ if $imgURL }}
         <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
-          <img
-            class="w-full h-40 md:h-full object-cover"
-            src="{{ $imgURL }}"
-            {{ if $imgW }}width="{{ $imgW }}"{{ end }}
-            {{ if $imgH }}height="{{ $imgH }}"{{ end }}
-            alt="{{ $alt }}" loading="lazy">
+          <img class="w-full h-40 md:h-full object-cover"
+               src="{{ $imgURL }}"
+               {{ if $imgW }}width="{{ $imgW }}"{{ end }}
+               {{ if $imgH }}height="{{ $imgH }}"{{ end }}
+               alt="{{ $alt }}" loading="lazy">
         </a>
       {{ else }}
         {{ warnf "community/card-wide: no image found for %s" $item.RelPermalink }}
@@ -74,7 +68,7 @@
         <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify }}</a>
       </h3>
 
-      {{/* 요약 nil-safe */}}
+      {{/* summary nil-safe */}}
       {{ $summary := "" }}
       {{ if $item.Params.summary }}
         {{ $summary = $item.Params.summary | markdownify | emojify }}
