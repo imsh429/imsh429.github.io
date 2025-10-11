@@ -21,7 +21,7 @@ main:
     weight: 400
     identifier: news
   - name: 뉴스
-    url: /#news
+    url: /#talks
     weight: 410
     parent: news
   - name: 사진첩
