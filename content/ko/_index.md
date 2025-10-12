@@ -26,19 +26,6 @@ sections:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
 
-  - block: slider
-    content:
-      slides:
-      - title: <span style="font-size:70%">AI</span>
-        content: <span style="font-size:60%">인간의 지능을 모방해 문제 해결, 학습, 패턴 인식 등의 작업을 자동으로 수행하는 기술</span>
-        align: center
-        background:
-          image:
-            filename: image1_ai.jpg
-            filters:
-              brightness: 0.7
-          position: right
-          color: '#666'
   - block: github.imsh429.slider
     content:
       height: '70vh'        # 원하는 높이
