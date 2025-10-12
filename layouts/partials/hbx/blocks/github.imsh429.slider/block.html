@@ -1,121 +1,41 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, reads from block + page.Params, robust) */}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, fixed 3 slides) */}}
 
-{{- $b := .block -}}
+{{/* 고정 슬라이드 (이미지/텍스트 여기서 직접 수정) */}}
+{{ $slides := slice
+  (dict "image" "/media/slide1.jpg" "title" "신서현 포트폴리오" "subtitle" "연구 · 로보틱스 · 백엔드")
+  (dict "image" "/media/slide2.jpg" "title" "Autonomous Driving" "subtitle" "DDP · CDDP · ROS")
+  (dict "image" "/media/slide3.jpg" "title" "Semiconductor Memory" "subtitle" "1T DRAM · FBRAM · SiGeC")
+}}
 
-{{/* 0) content/design 안전 획득 (대소문/누락 대응) */}}
-{{- $c := dict -}}
-{{- with $b -}}
-  {{- with .content -}} {{ $c = . }} {{- else -}}
-    {{- with .Content -}} {{ $c = . }} {{- end -}}
-  {{- end -}}
-{{- end -}}
-{{- $d := dict -}}
-{{- with $b -}}
-  {{- with .design -}} {{ $d = . }} {{- else -}}
-    {{- with .Design -}} {{ $d = . }} {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{/* 1) slides 후보: block.content → block.design → block root */}}
-{{- $slides := slice -}}
-{{- with $c -}}
-  {{- with .slides -}}  {{ $slides = . }} {{- end -}}
-  {{- if not $slides -}}{{ with .Slides }}{{ $slides = . }}{{ end }}{{- end -}}
-  {{- if not $slides -}}{{ with .images }}{{ $slides = . }}{{ end }}{{- end -}}
-  {{- if not $slides -}}{{ with .Images }}{{ $slides = . }}{{ end }}{{- end -}}
-{{- end -}}
-{{- if not $slides -}}
-  {{- with $d -}}
-    {{- with .slides -}} {{ $slides = . }} {{- end -}}
-    {{- if not $slides -}}{{ with .Slides }}{{ $slides = . }}{{ end }}{{- end -}}
-  {{- end -}}
-{{- end -}}
-{{- if not $slides -}}{{ with $b.slides }} {{ $slides = . }} {{ end }}{{- end -}}
-{{- if not $slides -}}{{ with $b.Slides }} {{ $slides = . }} {{ end }}{{- end -}}
-
-{{/* 2) block에서 못 얻으면 page.Params.sections에서 본인 섹션을 직접 파싱 */}}
-{{- if not $slides -}}
-  {{- with .page -}}
-    {{- $sections := .Params.sections | default (slice) -}}
-    {{- range $sections -}}
-      {{- $blk := or (index . "block") (index . "Block") -}}
-      {{- if eq $blk "github.imsh429.slider" -}}
-        {{- $secC := or (index . "content") (index . "Content") (dict) -}}
-        {{- $cand := or (index $secC "slides") (index $secC "Slides") (index $secC "images") (index $secC "Images") -}}
-        {{- with $cand -}} {{ $slides = . }} {{- end -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{/* 3) 옵션들 */}}
-{{- $height   := or (index $c "height")      "70vh" -}}
-{{- $autoplay := or (index $c "autoplay_ms") 2500  -}}
-{{- $speed    := or (index $c "speed_ms")    500   -}}
-{{- $overlay  := or (index $c "overlay")     true  -}}
+{{ $height := "70vh" }}
+{{ $autoplay := 2500 }}
+{{ $speed := 500 }}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <section class="hb-slider">
-  {{- if not $slides -}}
-    <div class="w-full" style="{{ printf "height:%s;" $height | safeCSS }}">
-      <div class="h-full flex items-center justify-center bg-gray-100 text-gray-500 rounded-lg">
-        <span class="text-sm">No slides configured</span>
-      </div>
-    </div>
-  {{- else -}}
-
-    <div class="swiper mySwiper" style="{{ printf "height:%s;" $height | safeCSS }}">
-      <div class="swiper-wrapper">
-
-        {{- range $i, $s := $slides -}}
-          {{- /* $s: 문자열 경로 OR 맵( image/src/title/subtitle/link/alt ) */ -}}
-
-          {{- $img := "" -}}
-          {{- $alt := printf "slide %d" (add $i 1) -}}
-          {{- $title := "" -}}
-          {{- $subtitle := "" -}}
-          {{- $link := "" -}}
-
-          {{- $t := printf "%T" $s -}}
-          {{- if (in $t "string") -}}
-            {{- $img = (printf "%v" $s) -}}
-          {{- else -}}
-            {{- with (index $s "image") }}   {{ $img = . }} {{- end -}}
-            {{- if not $img }}{{ with (index $s "src") }} {{ $img = . }} {{ end }}{{- end -}}
-            {{- with (index $s "alt") }}     {{ $alt = . }} {{- end -}}
-            {{- with (index $s "title") }}   {{ $title = . }} {{- end -}}
-            {{- with (index $s "subtitle") }}{{ $subtitle = . }} {{- end -}}
-            {{- with (index $s "link") }}    {{ $link = . }} {{- end -}}
-          {{- end -}}
-
-          {{- if $img -}}
-            <div class="swiper-slide relative">
-              {{- if $link -}}<a href="{{ $link }}" class="block w-full h-full relative">{{- end -}}
-                <img src="{{ $img }}" alt="{{ $alt }}" class="w-full h-full object-cover">
-                {{- if $overlay -}}<div class="absolute inset-0 bg-black/40 pointer-events-none"></div>{{- end -}}
-                {{- if or $title $subtitle -}}
-                  <div class="absolute inset-0 flex items-center justify-center text-center p-6">
-                    <div>
-                      {{- with $title -}}<h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ . }}</h2>{{- end -}}
-                      {{- with $subtitle -}}<p class="text-white/90 text-lg">{{ . }}</p>{{- end -}}
-                    </div>
-                  </div>
-                {{- end -}}
-              {{- if $link -}}</a>{{- end -}}
+  <div class="swiper mySwiper" style="{{ printf "height:%s;" $height | safeCSS }}">
+    <div class="swiper-wrapper">
+      {{ range $i, $s := $slides }}
+        <div class="swiper-slide relative">
+          <img src="{{ $s.image }}" alt="{{ $s.title }}" class="w-full h-full object-cover">
+          <!-- 투명도 레이어 -->
+          <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+          <!-- 텍스트 오버레이 -->
+          <div class="absolute inset-0 flex items-center justify-center text-center p-6">
+            <div>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ $s.title }}</h2>
+              {{ with $s.subtitle }}<p class="text-white/90 text-lg">{{ . }}</p>{{ end }}
             </div>
-          {{- end -}}
-
-        {{- end -}}
-
-      </div>
-
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      {{ end }}
     </div>
 
-  {{- end -}}
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -130,7 +50,7 @@
           navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
           speed: {{ $speed }}
         });
-      } catch(e) {}
+      } catch(e) { /* noop */ }
     });
   })();
 </script>
