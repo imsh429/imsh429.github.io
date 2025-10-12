@@ -1,8 +1,8 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, final with static/media fallback) */}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, reads from block + page.Params, robust) */}}
 
 {{- $b := .block -}}
 
-{{/* content/design 맵 안전 획득 */}}
+{{/* 0) content/design 안전 획득 (대소문/누락 대응) */}}
 {{- $c := dict -}}
 {{- with $b -}}
   {{- with .content -}} {{ $c = . }} {{- else -}}
@@ -16,7 +16,7 @@
   {{- end -}}
 {{- end -}}
 
-{{/* slides 후보값 탐색 (content.slides → content.images → design.slides → block.slides) */}}
+{{/* 1) slides 후보: block.content → block.design → block root */}}
 {{- $slides := slice -}}
 {{- with $c -}}
   {{- with .slides -}}  {{ $slides = . }} {{- end -}}
@@ -33,30 +33,26 @@
 {{- if not $slides -}}{{ with $b.slides }} {{ $slides = . }} {{ end }}{{- end -}}
 {{- if not $slides -}}{{ with $b.Slides }} {{ $slides = . }} {{ end }}{{- end -}}
 
-{{/* 옵션 (기본값 포함) */}}
-{{- $height   := "70vh" -}}
-{{- with $c.height      -}} {{ $height   = . }} {{- end -}}
-{{- $autoplay := 2500 -}}
-{{- with $c.autoplay_ms -}} {{ $autoplay = . }} {{- end -}}
-{{- $speed    := 500 -}}
-{{- with $c.speed_ms    -}} {{ $speed    = . }} {{- end -}}
-{{- $overlay  := true -}}
-{{- with $c.overlay     -}} {{ $overlay  = . }} {{- end -}}
-
-{{/* === Fallback: slides가 없으면 static/media 의 slide*.{jpg,png,webp} 자동 수집 === */}}
+{{/* 2) block에서 못 얻으면 page.Params.sections에서 본인 섹션을 직접 파싱 */}}
 {{- if not $slides -}}
-  {{- $col := slice -}}
-  {{- $files := readDir "static/media" | default (slice) -}}
-  {{- range $files -}}
-    {{- $name := .Name | lower -}}
-    {{- if (and (not .IsDir) (or (findRE `^slide[0-9]+\.(jpg|jpeg|png|webp)$` $name) (findRE `^hero[0-9]+\.(jpg|jpeg|png|webp)$` $name))) -}}
-      {{- $col = $col | append (printf "/media/%s" .Name) -}}
+  {{- with .page -}}
+    {{- $sections := .Params.sections | default (slice) -}}
+    {{- range $sections -}}
+      {{- $blk := or (index . "block") (index . "Block") -}}
+      {{- if eq $blk "github.imsh429.slider" -}}
+        {{- $secC := or (index . "content") (index . "Content") (dict) -}}
+        {{- $cand := or (index $secC "slides") (index $secC "Slides") (index $secC "images") (index $secC "Images") -}}
+        {{- with $cand -}} {{ $slides = . }} {{- end -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
-  {{- if gt (len $col) 0 -}}
-    {{- $slides = $col -}}
-  {{- end -}}
 {{- end -}}
+
+{{/* 3) 옵션들 */}}
+{{- $height   := or (index $c "height")      "70vh" -}}
+{{- $autoplay := or (index $c "autoplay_ms") 2500  -}}
+{{- $speed    := or (index $c "speed_ms")    500   -}}
+{{- $overlay  := or (index $c "overlay")     true  -}}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
@@ -73,6 +69,8 @@
       <div class="swiper-wrapper">
 
         {{- range $i, $s := $slides -}}
+          {{- /* $s: 문자열 경로 OR 맵( image/src/title/subtitle/link/alt ) */ -}}
+
           {{- $img := "" -}}
           {{- $alt := printf "slide %d" (add $i 1) -}}
           {{- $title := "" -}}
@@ -107,6 +105,7 @@
               {{- if $link -}}</a>{{- end -}}
             </div>
           {{- end -}}
+
         {{- end -}}
 
       </div>
@@ -131,7 +130,7 @@
           navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
           speed: {{ $speed }}
         });
-      } catch(e) { /* no-op */ }
+      } catch(e) {}
     });
   })();
 </script>
