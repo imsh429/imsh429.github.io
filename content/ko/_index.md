@@ -29,16 +29,13 @@ sections:
     content:
       title: ""
       text: |
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-        <div class="swiper mySwiper" style="height: 75vh;">
+        <div class="swiper mySwiper h-[75vh]">
           <div class="swiper-wrapper">
+
             <!-- Slide 1 -->
             <div class="swiper-slide relative">
-              <!-- 배경 이미지 -->
-              <img src="/media/image.jpg" alt="프로젝트 A" class="w-full h-full object-cover">
-              <!-- 반투명 오버레이 -->
+              <img src="/media/image.jpg" alt="프로젝트 A" class="absolute inset-0 w-full h-full object-cover">
               <div class="absolute inset-0 bg-black/40"></div>
-              <!-- 텍스트 오버레이 -->
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
                   <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-3">신서현의 포트폴리오</h2>
@@ -49,7 +46,7 @@ sections:
 
             <!-- Slide 2 -->
             <div class="swiper-slide relative">
-              <img src="/media/image2.jpg" alt="프로젝트 B" class="w-full h-full object-cover">
+              <img src="/media/image2.jpg" alt="프로젝트 B" class="absolute inset-0 w-full h-full object-cover">
               <div class="absolute inset-0 bg-slate-900/40"></div>
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
@@ -61,7 +58,7 @@ sections:
 
             <!-- Slide 3 -->
             <div class="swiper-slide relative">
-              <img src="/media/image.jpg" alt="프로젝트 C" class="w-full h-full object-cover">
+              <img src="/media/image.jpg" alt="프로젝트 C" class="absolute inset-0 w-full h-full object-cover">
               <div class="absolute inset-0 bg-emerald-900/35"></div>
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
@@ -78,22 +75,9 @@ sections:
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-          // 바꾸고 싶은 자동 전환 간격(ms)을 여기서 설정
-          const SLIDE_INTERVAL_MS = 2000; // 예: 3초
-
-          const swiper = new Swiper('.mySwiper', {
-            loop: true,
-            autoplay: { delay: SLIDE_INTERVAL_MS, disableOnInteraction: false, pauseOnMouseEnter: true },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            speed: 500, // 슬라이드 전환 애니메이션 속도(ms)
-          });
-        </script>
     design:
       columns: 1
+
 
   - block: collection
     id: papers
