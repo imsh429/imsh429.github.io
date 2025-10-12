@@ -27,21 +27,7 @@ sections:
         shape: circle # Options: circle (default), square, rounded
 
   - block: github.imsh429.slider
-    content:
-      height: '70vh'        # 원하는 높이
-      autoplay_ms: 2500     # 자동 전환 간격(ms)
-      speed_ms: 500         # 전환 속도(ms)
-      overlay: true         # 어두운 투명 레이어
-      slides:
-        - image: /media/slide1.jpg
-          title: 신서현 포트폴리오
-          subtitle: 연구 · 로보틱스 · 백엔드
-        - image: /media/slide1.jpg
-          title: Autonomous Driving
-          subtitle: DDP · CDDP · ROS
-        - image: /media/slide1.jpg
-          title: Semiconductor Memory
-          subtitle: DRAM · FBRAM · SiGeC
+    content: {} #layouts/partials/hbx/blocks/github.imhsh429.slider/block.html에서 설정 가능
     design:
       spacing:
         padding: [0,0,0,0]  # 좌우 패딩 제거(가로 꽉 차게)
