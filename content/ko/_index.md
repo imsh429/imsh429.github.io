@@ -25,7 +25,7 @@ sections:
       avatar:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
-        
+
   - block: slider
     content:
       slides:
@@ -39,61 +39,26 @@ sections:
               brightness: 0.7
           position: right
           color: '#666'
-
-  - block: markdown
+  - block: slider
     content:
-      title: ""
-      text: |
-        <div class="swiper js-swiper" data-delay="2500">
-          <div class="swiper-wrapper">
-
-            <!-- Slide 1 -->
-            <div class="swiper-slide relative">
-              <img src="/media/slide1.jpg" alt="슬라이드 1" class="w-full h-[55vh] md:h-[70vh] object-cover">
-              <div class="absolute inset-0 bg-black/40"></div> <!-- 투명도 오버레이 -->
-              <div class="absolute inset-0 flex items-center justify-center text-center p-6">
-                <div>
-                  <h2 class="text-3xl md:text-5xl font-extrabold text-white">헤드라인 1</h2>
-                  <p class="text-white/90 md:text-lg mt-2">서브텍스트 1</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="swiper-slide relative">
-              <img src="/media/slide2.jpg" alt="슬라이드 2" class="w-full h-[55vh] md:h-[70vh] object-cover">
-              <div class="absolute inset-0 bg-black/40"></div>
-              <div class="absolute inset-0 flex items-center justify-center text-center p-6">
-                <div>
-                  <h2 class="text-3xl md:text-5xl font-extrabold text-white">헤드라인 2</h2>
-                  <p class="text-white/90 md:text-lg mt-2">서브텍스트 2</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide relative">
-              <img src="/media/slide3.jpg" alt="슬라이드 3" class="w-full h-[55vh] md:h-[70vh] object-cover">
-              <div class="absolute inset-0 bg-black/40"></div>
-              <div class="absolute inset-0 flex items-center justify-center text-center p-6">
-                <div>
-                  <h2 class="text-3xl md:text-5xl font-extrabold text-white">헤드라인 3</h2>
-                  <p class="text-white/90 md:text-lg mt-2">서브텍스트 3</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- 네비/도트 -->
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
+      height: '70vh'        # 원하는 높이
+      autoplay_ms: 2500     # 자동 전환 간격(ms)
+      speed_ms: 500         # 전환 속도(ms)
+      overlay: true         # 어두운 투명 레이어
+      slides:
+        - image: /media/slide1.jpg
+          title: 신서현 포트폴리오
+          subtitle: 연구 · 로보틱스 · 백엔드
+        - image: /media/slide2.jpg
+          title: Autonomous Driving
+          subtitle: DDP · CDDP · ROS
+        - image: /media/slide3.jpg
+          title: Semiconductor Memory
+          subtitle: DRAM · FBRAM · SiGeC
     design:
-      columns: 1
-
-
+      spacing:
+        padding: [0,0,0,0]  # 좌우 패딩 제거(가로 꽉 차게)
+        
   - block: collection
     id: papers
     content:

@@ -1,0 +1,53 @@
+{{/* Block: slider  (Tailwind용 커스텀)
+   sections:
+     - block: slider
+       content:
+         height: '70vh'        # 60vh/70vh/500px 등
+         autoplay_ms: 2500
+         speed_ms: 500
+         overlay: true
+         slides:
+           - image: /media/slide1.jpg
+             title: 타이틀1
+             subtitle: 서브텍스트1
+             link: /post/1   # 선택
+           - image: /media/slide2.jpg
+             title: 타이틀2
+             subtitle: 서브텍스트2
+           - image: /media/slide3.jpg
+             title: 타이틀3
+             subtitle: 서브텍스트3
+*/}}
+{{ $c := .content }}
+{{ $height := $c.height | default "60vh" }}
+{{ $autoplay := $c.autoplay_ms | default 3000 }}
+{{ $speed := $c.speed_ms | default 500 }}
+{{ $overlay := $c.overlay | default true }}
+{{ $slides := $c.slides }}
+
+<div class="hb-swiper swiper" style="height: {{ $height }};"
+     data-autoplay="{{ $autoplay }}" data-speed="{{ $speed }}">
+  <div class="swiper-wrapper">
+    {{ range $slides }}
+      {{ $img := .image }} {{ if not $img }}{{ continue }}{{ end }}
+      <div class="swiper-slide relative">
+        {{ if .link }}<a href="{{ .link }}" class="block w-full h-full relative">{{ end }}
+          <img src="{{ $img }}" alt="{{ .alt | default "" }}" class="w-full h-full object-cover">
+          {{ if $overlay }}<div class="absolute inset-0 bg-black/40"></div>{{ end }}
+          {{ if or .title .subtitle }}
+            <div class="absolute inset-0 flex items-center justify-center text-center p-6">
+              <div>
+                {{ with .title }}<h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ . }}</h2>{{ end }}
+                {{ with .subtitle }}<p class="text-white/90 text-lg">{{ . }}</p>{{ end }}
+              </div>
+            </div>
+          {{ end }}
+        {{ if .link }}</a>{{ end }}
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
