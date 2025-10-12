@@ -36,10 +36,10 @@ sections:
         - image: /media/slide1.jpg
           title: 신서현 포트폴리오
           subtitle: 연구 · 로보틱스 · 백엔드
-        - image: /media/slide2.jpg
+        - image: /media/slide1.jpg
           title: Autonomous Driving
           subtitle: DDP · CDDP · ROS
-        - image: /media/slide3.jpg
+        - image: /media/slide1.jpg
           title: Semiconductor Memory
           subtitle: DRAM · FBRAM · SiGeC
     design:
