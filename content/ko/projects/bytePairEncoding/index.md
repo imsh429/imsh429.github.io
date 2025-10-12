@@ -3,7 +3,8 @@ title: BPE
 date: 2025-03-29
 weight: 6
 links:
-  - type: site
+  - name: github
+    icon: brands/github
     url: https://github.com/imsh429/bytePairEncoding.git
 tags:
   - Python
