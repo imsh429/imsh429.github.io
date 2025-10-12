@@ -42,9 +42,6 @@ sections:
         - image: /media/slide1.jpg
           title: Semiconductor Memory
           subtitle: DRAM · FBRAM · SiGeC
-    design:
-      spacing:
-        padding: [0,0,0,0]  # 좌우 패딩 제거(가로 꽉 차게)
 
   - block: collection
     id: papers

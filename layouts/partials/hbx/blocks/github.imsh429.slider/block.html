@@ -1,31 +1,42 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper) */}}
-{{ $block := .block }}
-{{ $c := $block.content }}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, robust slides lookup) */}}
+{{ $b := .block }}
+{{ $c := $b.content | default dict }}
 
-{{ $slides   := $c.slides | default (slice) }}
-{{ $height   := $c.height | default "70vh" }}
+{{/* slides를 여러 키에서 탐색: content.slides → content.images → block.slides */}}
+{{ $slides := $c.slides }}
+{{ if not $slides }}{{ $slides = $c.images }}{{ end }}
+{{ if not $slides }}{{ $slides = $b.slides }}{{ end }}
+
+{{ $height   := $c.height      | default "70vh" }}
 {{ $autoplay := $c.autoplay_ms | default 2500 }}
-{{ $speed    := $c.speed_ms | default 500 }}
-{{ $overlay  := $c.overlay | default true }}
+{{ $speed    := $c.speed_ms    | default 500 }}
+{{ $overlay  := $c.overlay     | default true }}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <section class="hb-slider">
-  <!-- 슬라이드가 0개면 즉시 폴백 박스 출력 -->
   {{ if eq (len $slides) 0 }}
     <div class="w-full" style="{{ printf "height:%s;" $height | safeCSS }}">
       <div class="h-full flex items-center justify-center bg-gray-100 text-gray-500 rounded-lg">
         <span class="text-sm">No slides configured</span>
       </div>
     </div>
+    {{ warnf "slider: slides empty for page %q (check sections[].content.slides)" .page.Path }}
   {{ else }}
     <div class="swiper mySwiper" style="{{ printf "height:%s;" $height | safeCSS }}">
       <div class="swiper-wrapper">
         {{ range $i, $s := $slides }}
-          {{ with $s.image }}
+          {{/* $s는 문자열(이미지 경로) 혹은 map일 수 있음: image/src 키 우선 */}}
+          {{ $img := "" }}
+          {{ with $s.image }}{{ $img = . }}{{ else }}
+            {{ with $s.src }}{{ $img = . }}{{ else }}
+              {{ $img = (printf "%v" $s) }}
+            {{ end }}
+          {{ end }}
+          {{ if $img }}
             <div class="swiper-slide relative">
               {{ if $s.link }}<a href="{{ $s.link }}" class="block w-full h-full relative">{{ end }}
-                <img src="{{ . }}" alt="{{ or $s.alt (printf "slide %d" (add $i 1)) }}" class="w-full h-full object-cover">
+                <img src="{{ $img }}" alt="{{ or $s.alt (printf "slide %d" (add $i 1)) }}" class="w-full h-full object-cover">
                 {{ if $overlay }}<div class="absolute inset-0 bg-black/40 pointer-events-none"></div>{{ end }}
                 {{ if or $s.title $s.subtitle }}
                   <div class="absolute inset-0 flex items-center justify-center text-center p-6">
