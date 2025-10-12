@@ -1,20 +1,14 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-(function(){
-  function initAll(){
-    if (!window.Swiper) return;
-    document.querySelectorAll('.mySwiper').forEach(function(el){
-      new Swiper(el, {
-        loop: true,
-        autoplay: { delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true },
-        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
-        navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
-        speed: 500,
-      });
+  // 페이지 내 여러 슬라이더 지원. data-delay(ms)로 자동전환 간격 제어.
+  document.querySelectorAll('.js-swiper').forEach(function(el){
+    var delay = parseInt(el.dataset.delay || '3000', 10);
+    new Swiper(el, {
+      loop: true,
+      autoplay: { delay: delay, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+      navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
+      speed: 600
     });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-  } else { initAll(); }
-})();
+  });
 </script>

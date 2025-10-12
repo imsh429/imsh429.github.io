@@ -25,45 +25,46 @@ sections:
       avatar:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
+
   - block: markdown
     content:
       title: ""
       text: |
-        <div class="swiper mySwiper h-[75vh]">
+        <div class="swiper js-swiper" data-delay="2500">
           <div class="swiper-wrapper">
 
             <!-- Slide 1 -->
             <div class="swiper-slide relative">
-              <img src="/media/image.jpg" alt="프로젝트 A" class="absolute inset-0 w-full h-full object-cover">
-              <div class="absolute inset-0 bg-black/40"></div>
+              <img src="/media/slide1.jpg" alt="슬라이드 1" class="w-full h-[55vh] md:h-[70vh] object-cover">
+              <div class="absolute inset-0 bg-black/40"></div> <!-- 투명도 오버레이 -->
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
-                  <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-3">신서현의 포트폴리오</h2>
-                  <p class="text-white/90 text-lg">연구 · 로보틱스 · 백엔드</p>
+                  <h2 class="text-3xl md:text-5xl font-extrabold text-white">헤드라인 1</h2>
+                  <p class="text-white/90 md:text-lg mt-2">서브텍스트 1</p>
                 </div>
               </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="swiper-slide relative">
-              <img src="/media/image2.jpg" alt="프로젝트 B" class="absolute inset-0 w-full h-full object-cover">
-              <div class="absolute inset-0 bg-slate-900/40"></div>
+              <img src="/media/slide2.jpg" alt="슬라이드 2" class="w-full h-[55vh] md:h-[70vh] object-cover">
+              <div class="absolute inset-0 bg-black/40"></div>
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
-                  <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-3">Autonomous Driving</h2>
-                  <p class="text-white/90 text-lg">DDP · CDDP · ROS</p>
+                  <h2 class="text-3xl md:text-5xl font-extrabold text-white">헤드라인 2</h2>
+                  <p class="text-white/90 md:text-lg mt-2">서브텍스트 2</p>
                 </div>
               </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="swiper-slide relative">
-              <img src="/media/image.jpg" alt="프로젝트 C" class="absolute inset-0 w-full h-full object-cover">
-              <div class="absolute inset-0 bg-emerald-900/35"></div>
+              <img src="/media/slide3.jpg" alt="슬라이드 3" class="w-full h-[55vh] md:h-[70vh] object-cover">
+              <div class="absolute inset-0 bg-black/40"></div>
               <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                 <div>
-                  <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-3">Semiconductor Memory</h2>
-                  <p class="text-white/90 text-lg">1T DRAM · FBRAM · SiGeC</p>
+                  <h2 class="text-3xl md:text-5xl font-extrabold text-white">헤드라인 3</h2>
+                  <p class="text-white/90 md:text-lg mt-2">서브텍스트 3</p>
                 </div>
               </div>
             </div>
