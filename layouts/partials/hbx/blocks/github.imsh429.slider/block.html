@@ -1,8 +1,8 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, final robust) */}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, final with static/media fallback) */}}
 
 {{- $b := .block -}}
 
-{{/* 0) content/design를 안전하게 얻기: .content/.design 유무와 대소문자 혼합 대응 */}}
+{{/* content/design 맵 안전 획득 */}}
 {{- $c := dict -}}
 {{- with $b -}}
   {{- with .content -}} {{ $c = . }} {{- else -}}
@@ -16,32 +16,24 @@
   {{- end -}}
 {{- end -}}
 
-{{/* 1) slides를 모든 후보 위치/키에서 탐색 (우선순위) */}}
+{{/* slides 후보값 탐색 (content.slides → content.images → design.slides → block.slides) */}}
 {{- $slides := slice -}}
-{{- /* content.slides / content.Slides */ -}}
 {{- with $c -}}
-  {{- with .slides -}} {{ $slides = . }} {{- end -}}
+  {{- with .slides -}}  {{ $slides = . }} {{- end -}}
   {{- if not $slides -}}{{ with .Slides }}{{ $slides = . }}{{ end }}{{- end -}}
-  {{- /* content.images / content.Images */ -}}
   {{- if not $slides -}}{{ with .images }}{{ $slides = . }}{{ end }}{{- end -}}
   {{- if not $slides -}}{{ with .Images }}{{ $slides = . }}{{ end }}{{- end -}}
 {{- end -}}
-{{- /* design.slides / design.Slides */ -}}
 {{- if not $slides -}}
   {{- with $d -}}
     {{- with .slides -}} {{ $slides = . }} {{- end -}}
     {{- if not $slides -}}{{ with .Slides }}{{ $slides = . }}{{ end }}{{- end -}}
   {{- end -}}
 {{- end -}}
-{{- /* block 루트 slides */ -}}
-{{- if not $slides -}}
-  {{- with $b.slides -}} {{ $slides = . }} {{- end -}}
-{{- end -}}
-{{- if not $slides -}}
-  {{- with $b.Slides -}} {{ $slides = . }} {{- end -}}
-{{- end -}}
+{{- if not $slides -}}{{ with $b.slides }} {{ $slides = . }} {{ end }}{{- end -}}
+{{- if not $slides -}}{{ with $b.Slides }} {{ $slides = . }} {{ end }}{{- end -}}
 
-{{/* 2) 옵션들 (없으면 기본값) */}}
+{{/* 옵션 (기본값 포함) */}}
 {{- $height   := "70vh" -}}
 {{- with $c.height      -}} {{ $height   = . }} {{- end -}}
 {{- $autoplay := 2500 -}}
@@ -50,6 +42,21 @@
 {{- with $c.speed_ms    -}} {{ $speed    = . }} {{- end -}}
 {{- $overlay  := true -}}
 {{- with $c.overlay     -}} {{ $overlay  = . }} {{- end -}}
+
+{{/* === Fallback: slides가 없으면 static/media 의 slide*.{jpg,png,webp} 자동 수집 === */}}
+{{- if not $slides -}}
+  {{- $col := slice -}}
+  {{- $files := readDir "static/media" | default (slice) -}}
+  {{- range $files -}}
+    {{- $name := .Name | lower -}}
+    {{- if (and (not .IsDir) (or (findRE `^slide[0-9]+\.(jpg|jpeg|png|webp)$` $name) (findRE `^hero[0-9]+\.(jpg|jpeg|png|webp)$` $name))) -}}
+      {{- $col = $col | append (printf "/media/%s" .Name) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if gt (len $col) 0 -}}
+    {{- $slides = $col -}}
+  {{- end -}}
+{{- end -}}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
@@ -60,26 +67,22 @@
         <span class="text-sm">No slides configured</span>
       </div>
     </div>
-    {{- /* 굳이 .page 접근 안 함: 일부 컨텍스트에서 nil일 수 있어 안전하게 생략 */ -}}
   {{- else -}}
 
     <div class="swiper mySwiper" style="{{ printf "height:%s;" $height | safeCSS }}">
       <div class="swiper-wrapper">
 
         {{- range $i, $s := $slides -}}
-          {{- /* $s: 문자열 경로 OR 맵( image/src/title/subtitle/link/alt ) */ -}}
-
           {{- $img := "" -}}
           {{- $alt := printf "slide %d" (add $i 1) -}}
           {{- $title := "" -}}
           {{- $subtitle := "" -}}
           {{- $link := "" -}}
 
-          {{- $type := printf "%T" $s -}}
-          {{- if (in $type "string") -}}
+          {{- $t := printf "%T" $s -}}
+          {{- if (in $t "string") -}}
             {{- $img = (printf "%v" $s) -}}
           {{- else -}}
-            {{- /* 맵에서 안전 접근: index 사용 전 타입 분기했고, 키 없으면 무시 */ -}}
             {{- with (index $s "image") }}   {{ $img = . }} {{- end -}}
             {{- if not $img }}{{ with (index $s "src") }} {{ $img = . }} {{ end }}{{- end -}}
             {{- with (index $s "alt") }}     {{ $alt = . }} {{- end -}}
@@ -104,7 +107,6 @@
               {{- if $link -}}</a>{{- end -}}
             </div>
           {{- end -}}
-
         {{- end -}}
 
       </div>
