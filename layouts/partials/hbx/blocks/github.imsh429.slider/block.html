@@ -1,15 +1,22 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, nil-safe) */}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, ultra-robust) */}}
 {{ $b := .block }}
+
+{{/* 0) content/design 루트가 nil이어도 안전하게 다룰 준비 */}}
 {{ $c := $b.content | default dict }}
+{{ $d := $b.design  | default dict }}
 
-{{/* slides 안정적으로 획득: content.slides → content.images → block.slides → 빈 slice */}}
+{{/* 1) slides를 가능한 모든 위치/이름에서 탐색 (우선순위 순) */}}
 {{ $slides := slice }}
-{{ with $c.slides }}  {{ $slides = . }}{{ else }}
-  {{ with $c.images }}{{ $slides = . }}{{ else }}
-    {{ with $b.slides }}{{ $slides = . }}{{ end }}
-  {{ end }}
-{{ end }}
+{{/* content.slides */}}
+{{ with $c.slides }}           {{ $slides = . }}{{ end }}
+{{/* content.images (문자열/맵 배열 둘 다 허용) */}}
+{{ if not $slides }}{{ with $c.images }}{{ $slides = . }}{{ end }}{{ end }}
+{{/* design.slides (실수로 design에 넣었을 때) */}}
+{{ if not $slides }}{{ with $d.slides }}{{ $slides = . }}{{ end }}{{ end }}
+{{/* block 루트의 slides (드물지만 허용) */}}
+{{ if not $slides }}{{ with $b.slides }}{{ $slides = . }}{{ end }}{{ end }}
 
+{{/* 2) 옵션값들 (없으면 기본값) */}}
 {{ $height   := $c.height      | default "70vh" }}
 {{ $autoplay := $c.autoplay_ms | default 2500 }}
 {{ $speed    := $c.speed_ms    | default 500 }}
@@ -19,43 +26,51 @@
 
 <section class="hb-slider">
   {{ if not $slides }}
+    <!-- 슬라이드 배열이 비어 있을 때 폴백(보이면 YAML 위치/키가 틀린 것) -->
     <div class="w-full" style="{{ printf "height:%s;" $height | safeCSS }}">
       <div class="h-full flex items-center justify-center bg-gray-100 text-gray-500 rounded-lg">
         <span class="text-sm">No slides configured</span>
       </div>
     </div>
-    {{ warnf "slider: slides empty for page %q (check sections[].content.slides)" .page.Path }}
+    {{/* 디버그 로그: 빌드 로그에서 바로 원인 확인 가능 */}}
+    {{ warnf "slider: slides empty. Check sections[].content.slides (page=%q)" .page.Path }}
   {{ else }}
     <div class="swiper mySwiper" style="{{ printf "height:%s;" $height | safeCSS }}">
       <div class="swiper-wrapper">
         {{ range $i, $s := $slides }}
-
-          {{/* $s가 문자열(이미지 경로)일 수도, map일 수도 있음 → 공통 처리 */}}
+          {{/* $s 가 문자열(이미지 경로) 또는 맵일 수 있음 → 통합 추출 */}}
           {{ $img := "" }}
-          {{ with $s.image }}{{ $img = . }}{{ else }}
-            {{ with $s.src }}{{ $img = . }}{{ else }}
-              {{ $img = (printf "%v" $s) }}
-            {{ end }}
+          {{ $alt := (printf "slide %d" (add $i 1)) }}
+          {{ $title := "" }}{{ $subtitle := "" }}{{ $link := "" }}
+
+          {{/* 문자열인 경우 */}}
+          {{ if (eq (printf "%T" $s) "string") }}
+            {{ $img = $s }}
+          {{ else }}
+            {{ with $s.image }}{{ $img = . }}{{ end }}
+            {{ if not $img }}{{ with $s.src }}{{ $img = . }}{{ end }}{{ end }}
+            {{ with $s.alt }}{{ $alt = . }}{{ end }}
+            {{ with $s.title }}{{ $title = . }}{{ end }}
+            {{ with $s.subtitle }}{{ $subtitle = . }}{{ end }}
+            {{ with $s.link }}{{ $link = . }}{{ end }}
           {{ end }}
 
           {{ if $img }}
             <div class="swiper-slide relative">
-              {{ with $s.link }}<a href="{{ . }}" class="block w-full h-full relative">{{ end }}
-                <img src="{{ $img }}" alt="{{ or $s.alt (printf "slide %d" (add $i 1)) }}" class="w-full h-full object-cover">
+              {{ if $link }}<a href="{{ $link }}" class="block w-full h-full relative">{{ end }}
+                <img src="{{ $img }}" alt="{{ $alt }}" class="w-full h-full object-cover">
                 {{ if $overlay }}<div class="absolute inset-0 bg-black/40 pointer-events-none"></div>{{ end }}
-
-                {{ if or $s.title $s.subtitle }}
+                {{ if or $title $subtitle }}
                   <div class="absolute inset-0 flex items-center justify-center text-center p-6">
                     <div>
-                      {{ with $s.title }}<h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ . }}</h2>{{ end }}
-                      {{ with $s.subtitle }}<p class="text-white/90 text-lg">{{ . }}</p>{{ end }}
+                      {{ with $title }}<h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ . }}</h2>{{ end }}
+                      {{ with $subtitle }}<p class="text-white/90 text-lg">{{ . }}</p>{{ end }}
                     </div>
                   </div>
                 {{ end }}
-              {{ if $s.link }}</a>{{ end }}
+              {{ if $link }}</a>{{ end }}
             </div>
           {{ end }}
-
         {{ end }}
       </div>
 
@@ -68,7 +83,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  (function(){
+  (function () {
     document.querySelectorAll('.hb-slider .mySwiper').forEach(function (el) {
       try {
         new Swiper(el, {
@@ -78,7 +93,7 @@
           navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
           speed: {{ $speed }}
         });
-      } catch(e) { console && console.warn('Swiper init failed', e); }
+      } catch (e) { console && console.warn('Swiper init failed', e); }
     });
   })();
 </script>
