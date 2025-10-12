@@ -39,7 +39,7 @@ sections:
               brightness: 0.7
           position: right
           color: '#666'
-  - block: slider
+  - block: github.imsh429.slider
     content:
       height: '70vh'        # 원하는 높이
       autoplay_ms: 2500     # 자동 전환 간격(ms)
@@ -58,7 +58,7 @@ sections:
     design:
       spacing:
         padding: [0,0,0,0]  # 좌우 패딩 제거(가로 꽉 차게)
-        
+
   - block: collection
     id: papers
     content:
