@@ -43,15 +43,6 @@ profiles:
   - icon: brands/discord
     url: https://discord.com/users/1282685152795033673
     label: Discord
-  - icon: brands/youtube
-    url: "#"
-    label: Youtube
-  - icon: brands/linkedin
-    url: "#"
-    label: LinkedIn
-  - icon: brands/instagram
-    url: "#"
-    label: Instagram
 
 interests:
   - 백엔드 개발

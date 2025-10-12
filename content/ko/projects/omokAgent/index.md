@@ -3,7 +3,8 @@ title: 오목 게임 에이전트 구현
 date: 2024-04-12
 weight: 4
 links:
-  - type: site
+  - name: Github
+    icon: brands/github
     url: https://github.com/imsh429/omok-ai.git
 tags:
   - Python

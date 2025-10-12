@@ -3,7 +3,8 @@ title: 영화 서비스 개발
 date: 2025-03-27
 weight: 3
 links:
-  - type: site
+  - name: Frontend
+    icon: brands/github
     url: https://github.com/imsh429/netflix-project.git
 tags: 
   - Vue
