@@ -17,11 +17,11 @@ main:
     weight: 300
 
   - name: 소식
-    url: /#talks
+    url: /#news
     weight: 400
     identifier: news
   - name: 뉴스
-    url: /#talks
+    url: /#news
     weight: 410
     parent: news
   - name: 블로그

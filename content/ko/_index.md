@@ -33,9 +33,9 @@ sections:
         padding: [0,0,0,0]  # 좌우 패딩 제거(가로 꽉 차게)
 
   - block: collection
-    id: papers
+    id: projects
     content:
-      title: 프로젝트
+      title: 대표 프로젝트
       filters:
         folders:
           - projects
@@ -45,7 +45,7 @@ sections:
       columns: 2
 
   - block: collection
-    id: talks
+    id: events
     content:
       title: 뉴스
       filters:

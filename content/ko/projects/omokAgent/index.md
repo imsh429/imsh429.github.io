@@ -2,6 +2,7 @@
 title: 오목 게임 에이전트 구현
 date: 2024-04-12
 weight: 4
+featured: true
 links:
   - name: Github
     icon: brands/github
