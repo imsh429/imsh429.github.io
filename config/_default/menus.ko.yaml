@@ -17,17 +17,17 @@ main:
     weight: 300
 
   - name: 소식
-    url: /#news
+    url: /#events
     weight: 400
-    identifier: news
+    identifier: events
   - name: 뉴스
-    url: /#news
+    url: /#events
     weight: 410
-    parent: news
+    parent: events
   - name: 블로그
     url: /#blog
     weight: 420
-    parent: news
+    parent: events
 
   - name: 문의
     url: contact/
