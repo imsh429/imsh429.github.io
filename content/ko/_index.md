@@ -35,10 +35,10 @@ sections:
   - block: collection
     id: papers
     content:
-      title: Featured Publications
+      title: 프로젝트
       filters:
         folders:
-          - publications
+          - Projects
         featured_only: true
     design:
       view: article-grid
