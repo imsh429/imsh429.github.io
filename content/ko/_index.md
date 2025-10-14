@@ -38,7 +38,7 @@ sections:
       title: 프로젝트
       filters:
         folders:
-          - Projects
+          - projects
         featured_only: true
     design:
       view: article-grid
