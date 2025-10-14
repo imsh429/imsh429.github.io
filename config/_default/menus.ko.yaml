@@ -17,7 +17,7 @@ main:
     weight: 300
 
   - name: 소식
-    url: /#news
+    url: /#talks
     weight: 400
     identifier: news
   - name: 뉴스
@@ -25,7 +25,7 @@ main:
     weight: 410
     parent: news
   - name: 블로그
-    url: /#news
+    url: /#blog
     weight: 420
     parent: news
 
