@@ -54,9 +54,9 @@ sections:
     design:
       view: community/card-wide
   - block: collection
-    id: news
+    id: blog
     content:
-      title: 갤러리
+      title: 블로그
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...

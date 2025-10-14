@@ -24,7 +24,7 @@ main:
     url: /#talks
     weight: 410
     parent: news
-  - name: 사진첩
+  - name: 블로그
     url: /#news
     weight: 420
     parent: news
