@@ -1,0 +1,7 @@
+/* Navbar의 링크(.nav-link)에 마우스를 올렸을 때 적용될 스타일 */
+.nav-link:hover {
+  color: #007bff !important; /* 원하는 글자색 (테마에 따라 색상 코드 변경) */
+  background-color: rgba(0, 0, 0, 0.05); /* 살짝 어두운 배경색 추가 */
+  border-radius: 5px; /* 모서리를 살짝 둥글게 */
+  transition: all 0.2s ease-in-out; /* 부드러운 전환 효과 */
+}
