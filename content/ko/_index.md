@@ -47,7 +47,7 @@ sections:
   - block: collection
     id: events
     content:
-      title: 뉴스
+      title: 새로운 소식
       filters:
         folders:
           - events
