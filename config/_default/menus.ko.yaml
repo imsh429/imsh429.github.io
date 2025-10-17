@@ -16,11 +16,10 @@ main:
     url: projects/
     weight: 300
 
-  - name: 소식
-    url: /#events
+  - name: 커뮤니티
     weight: 400
     identifier: events
-  - name: 뉴스
+  - name: 소식
     url: events/
     weight: 410
     parent: events
