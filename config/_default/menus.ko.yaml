@@ -18,15 +18,15 @@ main:
 
   - name: 커뮤니티
     weight: 400
-    identifier: events
+    identifier: community
   - name: 소식
     url: events/
     weight: 410
-    parent: events
+    parent: community
   - name: 블로그
-    url: /#blog
+    url: blog/
     weight: 420
-    parent: events
+    parent: community
 
   - name: 문의
     url: contact/
