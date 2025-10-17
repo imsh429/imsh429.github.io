@@ -49,7 +49,7 @@
 ## 📫 Contact
 
 * **GitHub**: `https://github.com/imsh429`
-* **Email**: `s3221429@gmail.com`
+* **Email**: `sh99429@naver.com`
 
 ---
 
