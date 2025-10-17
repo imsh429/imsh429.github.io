@@ -21,7 +21,7 @@ main:
     weight: 400
     identifier: events
   - name: 뉴스
-    url: /#events
+    url: events/
     weight: 410
     parent: events
   - name: 블로그
