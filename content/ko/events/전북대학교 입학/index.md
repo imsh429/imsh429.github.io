@@ -1,10 +1,8 @@
 ---
 title: 전북대학교 입학
 
-event: Hugo Blox Builder Conference
-event_url: https://example.org
-
 location: 전북대학교
+location_url: https://www.jbnu.ac.kr/web/index.do
 
 summary: An example talk using Hugo Blox Builder's Markdown slides feature.
 
