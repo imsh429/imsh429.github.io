@@ -1,23 +1,33 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, i18n aware robust) */}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, i18n debug version) */}}
 
+{{/* ────────────────────────────────────────────────
+     DEBUG: 현재 언어값 출력
+────────────────────────────────────────────────── */}}
+{{ $langA := .Site.Language.Lang }}
+{{ $langB := .Site.Language.LanguageCode }}
+{{ $langC := .Site.LanguageCode }}
+<div style="position:fixed;z-index:99999;top:0;left:0;font-size:12px;padding:6px;background:#111;color:#0f0;font-family:monospace;">
+  langA={{ $langA }} /
+  langB={{ $langB }} /
+  langC={{ $langC }}
+</div>
+
+{{/* ────────────────────────────────────────────────
+     슬라이더 구성
+────────────────────────────────────────────────── */}}
 {{ $height := "70vh" }}
 {{ $autoplay := 2500 }}
 {{ $speed := 500 }}
 
-{{/* 현재 언어 후보들을 전부 모아본다 */}}
-{{ $langA := .Site.Language.Lang | lower }}
-{{ $langB := .Site.Language.LanguageCode | lower }}
-{{ $langC := .Site.LanguageCode | lower }} {{/* (theme에 따라 전역에서 오는 경우도 있음) */}}
-
-{{/* 한국어라고 판단할 수 있는가? 조건을 or로 묶어서 한 번에 처리 */}}
-{{ $isKorean :=
-    or
-      (or (hasPrefix $langA "ko") (hasPrefix $langA "kr"))
-      (or (hasPrefix $langB "ko") (hasPrefix $langB "kr"))
-      (or (hasPrefix $langC "ko") (hasPrefix $langC "kr"))
-}}
-
 {{ $scratch := newScratch }}
+
+{{/* 한국어인지 판별: 세 변수 중 하나라도 ko로 시작하면 true */}}
+{{ $isKorean :=
+  or
+    (or (hasPrefix (lower $langA) "ko") (hasPrefix (lower $langA) "kr"))
+    (or (hasPrefix (lower $langB) "ko") (hasPrefix (lower $langB) "kr"))
+    (or (hasPrefix (lower $langC) "ko") (hasPrefix (lower $langC) "kr"))
+}}
 
 {{ if $isKorean }}
   {{ $scratch.Set "slides" (slice
