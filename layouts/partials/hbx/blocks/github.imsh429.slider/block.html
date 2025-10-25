@@ -7,7 +7,7 @@
 {{/* scratch 객체 생성 (슬라이드 목록을 저장할 임시 저장소) */}}
 {{ $scratch := newScratch }}
 
-{{ if eq .Site.Language.Lang "ko-KR" }}
+{{ if eq .Site.Language.Lang "ko-kr" }}
   {{ $scratch.Set "slides" (slice
     (dict "image" "/media/slide1.jpg" "title" "앞으로의 계획 및 목표" "subtitle" "")
     (dict "image" "/media/slide2.jpg" "title" "심화 학습" "subtitle" "꾸준한 학습과 실습으로 기술 스택을 심화하고, 프로젝트로 성과를 만듭니다.")
