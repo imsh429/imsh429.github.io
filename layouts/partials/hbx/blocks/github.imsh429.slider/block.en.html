@@ -1,0 +1,56 @@
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, fixed 3 slides) */}}
+
+{{/* 고정 슬라이드 (이미지/텍스트 여기서 직접 수정) */}}
+{{ $slides := slice
+  (dict "image" "/media/slide1.jpg" "title" "Future Plans and Goals" "subtitle" "")
+  (dict "image" "/media/slide2.jpg" "title" "In-depth Learning" "subtitle" "Deepening my tech stack through consistent study and practice, and building achievements with projects.")
+  (dict "image" "/media/slide3.jpg" "title" "Competitions & Hackathons" "subtitle" "Expanding practical experience and networking by solving problems through team collaboration.")
+}}
+
+{{ $height := "70vh" }}
+{{ $autoplay := 2500 }}
+{{ $speed := 500 }}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<section class="hb-slider">
+  <div class="swiper mySwiper" style="{{ printf "height:%s;" $height | safeCSS }}">
+    <div class="swiper-wrapper">
+      {{ range $i, $s := $slides }}
+        <div class="swiper-slide relative">
+          <img src="{{ $s.image }}" alt="{{ $s.title }}" class="w-full h-full object-cover">
+          <!-- 투명도 레이어 -->
+          <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
+          <!-- 텍스트 오버레이 -->
+          <div class="absolute inset-0 flex items-center justify-center text-center p-6">
+            <div>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ $s.title }}</h2>
+              {{ with $s.subtitle }}<p class="text-white/90 text-lg">{{ . }}</p>{{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  (function(){
+    document.querySelectorAll('.hb-slider .mySwiper').forEach(function (el) {
+      try {
+        new Swiper(el, {
+          loop: true,
+          autoplay: { delay: {{ $autoplay }}, disableOnInteraction: false, pauseOnMouseEnter: true },
+          pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+          navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
+          speed: {{ $speed }}
+        });
+      } catch(e) { /* noop */ }
+    });
+  })();
+</script>
