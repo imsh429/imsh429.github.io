@@ -9,7 +9,7 @@ design:
 sections:
   - block: github.imsh429.banner
     content:
-      image: "/media/image.jpg"
+      image: "/media/banner1.jpg"
       alt: "Projects banner"
       overlay_opacity: "0.2"   # 배경 어둡게 안 하고 싶으면 0.0
     design:
