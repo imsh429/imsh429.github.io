@@ -112,4 +112,6 @@ awards:
       Received an award in the "Generative AI (LLM) vs. Human: Text Discrimination Challenge."
 ---
 
+<p style="text-align:justify;">
 "I am a student at Jeonbuk National University's Department of Computer Science & Artificial Intelligence, striving to become a Backend Developer. I have a strong interest in server and database design, API development, and cloud infrastructure. My goal is to build valuable solutions by integrating AI technology into real-world services. Through continuous learning, I am committed to becoming a reliable backend engineer."
+</p>
