@@ -26,8 +26,8 @@ sections:
         size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
         shape: circle # Options: circle (default), square, rounded
 
-  - block: github.imsh429.slider
-    content: {} #layouts/partials/hbx/blocks/github.imhsh429.slider/block.html에서 설정 가능
+  - block: github.imsh429.slider_en
+    content: {} #layouts/partials/hbx/blocks/github.imhsh429.slider_en/block.html에서 설정 가능
     design:
       spacing:
         padding: [0,0,0,0]  # 좌우 패딩 제거(가로 꽉 차게)
