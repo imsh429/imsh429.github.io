@@ -1,0 +1,27 @@
+{{/* Block: github.imsh429.banner */}}
+
+{{/* ---- 데이터 불러오기 ---- */}}
+{{ $img       := .block.content.image | default "/media/image.jpg" }}
+{{ $alt       := .block.content.alt   | default "Banner" }}
+{{ $overlay   := .block.content.overlay_opacity | default "0.0" }}
+{{ $hBase     := .block.design.height.base | default "14vh" }}
+{{ $hMd       := .block.design.height.md   | default "18vh" }}
+
+{{/* ---- 렌더링 ---- */}}
+<div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen !mt-0 !pt-0 !mb-0 !pb-0">
+  <section class="relative w-full overflow-hidden transform -translate-y-px !m-0 !p-0"
+           style="height:{{ $hBase }};">
+    <img
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      src="{{ $img }}"
+      alt="{{ $alt }}"
+      loading="eager"
+      decoding="async"
+    >
+    {{ if ne $overlay "0.0" }}
+      <div class="absolute inset-0 pointer-events-none"
+           style="background-color: rgba(0,0,0,{{ $overlay }});">
+      </div>
+    {{ end }}
+  </section>
+</div>
