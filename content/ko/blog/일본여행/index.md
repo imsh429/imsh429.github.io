@@ -14,5 +14,6 @@ tags:
 
 ## 오사카 여행
 
+<p style="text-align:justify;">
 오사카, 교토 여행을 다녀왔습니다.
-
+</p>

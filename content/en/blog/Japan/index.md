@@ -14,4 +14,6 @@ tags:
 
 ## Osaka Trip
 
+<p style="text-align:justify;">
 I went on a trip to Osaka and Kyoto.
+</p>

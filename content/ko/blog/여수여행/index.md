@@ -23,8 +23,10 @@ content_meta:
 
 ## 여수여행
 
+<p style="text-align:justify;">
 여수여행을 다녀왔습니다.
 음식이 다 맛있어서 행복했습니다.
+</p>
 
 [//]: # '[![The template is mobile first with a responsive design to ensure that your site looks stunning on every device.](https://raw.githubusercontent.com/HugoBlox/hugo-blox-builder/main/starters/academic-cv/preview.png)](https://hugoblox.com)'
 
