@@ -1,13 +1,25 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, i18n aware) */}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, i18n aware robust) */}}
 
 {{ $height := "70vh" }}
 {{ $autoplay := 2500 }}
 {{ $speed := 500 }}
 
-{{/* scratch 객체 생성 (슬라이드 목록을 저장할 임시 저장소) */}}
+{{/* 현재 언어 후보들을 전부 모아본다 */}}
+{{ $langA := .Site.Language.Lang | lower }}
+{{ $langB := .Site.Language.LanguageCode | lower }}
+{{ $langC := .Site.LanguageCode | lower }} {{/* (theme에 따라 전역에서 오는 경우도 있음) */}}
+
+{{/* 한국어라고 판단할 수 있는가? 조건을 or로 묶어서 한 번에 처리 */}}
+{{ $isKorean :=
+    or
+      (or (hasPrefix $langA "ko") (hasPrefix $langA "kr"))
+      (or (hasPrefix $langB "ko") (hasPrefix $langB "kr"))
+      (or (hasPrefix $langC "ko") (hasPrefix $langC "kr"))
+}}
+
 {{ $scratch := newScratch }}
 
-{{ if eq .Site.Language.Lang "ko-kr" }}
+{{ if $isKorean }}
   {{ $scratch.Set "slides" (slice
     (dict "image" "/media/slide1.jpg" "title" "앞으로의 계획 및 목표" "subtitle" "")
     (dict "image" "/media/slide2.jpg" "title" "심화 학습" "subtitle" "꾸준한 학습과 실습으로 기술 스택을 심화하고, 프로젝트로 성과를 만듭니다.")
