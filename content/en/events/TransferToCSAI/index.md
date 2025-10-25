@@ -37,5 +37,6 @@ slides: ""
 ---
 **I successfully transferred to the Department of Computer Science & Artificial Intelligence.** 
 
+<p style="text-align:justify;">
 After a long leave of absence, I transferred to the Department of Computer Science & Artificial Intelligence because I wanted to start studying computer-related fields in earnest.
-
+</p>

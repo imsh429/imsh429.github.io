@@ -37,5 +37,6 @@ slides: ""
 ---
 **I enrolled at Jeonbuk National University.** 
 
+<p style="text-align:justify;">
 Due to COVID-19, we couldn't have in-person classes, but they were conducted remotely.
-
+</p>

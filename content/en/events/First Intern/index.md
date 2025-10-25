@@ -37,4 +37,6 @@ slides: ""
 ---
 **My First Internship Completed** 
 
+<p style="text-align:justify;">
 I had a great opportunity during the summer break to complete an internship at K-Tech, a company that develops an LMS (Learning Management System) educational platform. Although it was a short period, I learned a lot while working as a development intern.
+</p>
