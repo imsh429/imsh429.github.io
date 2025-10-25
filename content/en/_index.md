@@ -35,7 +35,7 @@ sections:
   - block: collection
     id: projects
     content:
-      title: 대표 프로젝트
+      title: Featured Projects
       filters:
         folders:
           - projects
@@ -47,7 +47,7 @@ sections:
   - block: collection
     id: events
     content:
-      title: 새로운 소식
+      title: New Events
       filters:
         folders:
           - events
@@ -56,7 +56,7 @@ sections:
   - block: collection
     id: blog
     content:
-      title: 블로그
+      title: Blog
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...

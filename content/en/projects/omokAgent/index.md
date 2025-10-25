@@ -1,5 +1,5 @@
 ---
-title: 오목 게임 에이전트 구현
+title: Omok (Gomoku) Game Agent Implementation
 date: 2024-04-12
 weight: 4
 featured: true
@@ -14,6 +14,6 @@ tags:
   - Omok
 ---
 
-오목 게임에서 승리할 수 있는 탐색 기반 에이전트를 제작했습니다. 게임 트리와 Alpha-Beta Pruning 기법을 적용하여 효율적인 수 선택이 가능하도록 구현했습니다.
+Developed a search-based agent capable of winning at the game of Omok. It was implemented to make efficient move selections by applying a game tree and the Alpha-Beta Pruning algorithm.
 
 <!--more-->

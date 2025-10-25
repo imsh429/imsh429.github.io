@@ -1,5 +1,5 @@
 ---
-title: 한글 오토마타 제작
+title: Building a Hangul Automaton
 date: 2025-03-27
 weight: 5
 links:
@@ -12,6 +12,6 @@ tags:
   #- Markdown
 ---
 
-파이썬으로 한글 입력 방식을 직접 구현한 오토마타. 초성, 중성, 종성을 조합하여 완성형 글자를 생성하는 과정을 코드로 설계하였습니다.
+Implemented an automaton in Python that replicates the Hangul input method. The process was designed in code to generate complete Hangul characters by combining initial consonants (Choseong), medial vowels (Jungseong), and final consonants (Jongseong).
 
 <!--more-->

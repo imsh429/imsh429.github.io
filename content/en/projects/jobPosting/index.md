@@ -1,5 +1,5 @@
 ---
-title: 채용 공고 플랫폼 백엔드 구현
+title: Backend Implementation for a Job Posting Platform
 date: 2024-06-22
 weight: 2
 featured: true
@@ -13,6 +13,6 @@ tags:
   - Backend
 ---
 
-채용 공고 데이터를 크롤링하여 사용자에게 제공하는 백엔드 서비스를 구현했습니다. 이 프로젝트는 사용자 인증, 채용 공고 관리, 지원서 처리 및 북마크 등 다양한 기능을 제공합니다.
+Implemented a backend service that crawls job posting data and provides it to users. This project includes various features such as user authentication, job posting management, application processing, and bookmarks.
 
 <!--more-->

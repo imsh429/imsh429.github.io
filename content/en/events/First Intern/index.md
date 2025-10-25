@@ -1,9 +1,9 @@
 ---
-title: 슬기로운 인턴생활
+title: My Rewarding Internship
 
-location: 케이테크
+location: K-Tech
 
-summary: 직무체험을 다녀왔습니다.
+summary: I completed a job experience program.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -35,8 +35,6 @@ slides: ""
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 ---
-**첫 인턴생활 끝** 
+**My First Internship Completed** 
 
-여름방학때 좋은 기회로 케이테크라는 lms 교육플랫폼을 개발하는 회사에 직무체험을 다녀왔습니다.
-짧은 기간이었지만 개발 인턴으로 활동하며 많이 배웠습니다.
-
+I had a great opportunity during the summer break to complete an internship at K-Tech, a company that develops an LMS (Learning Management System) educational platform. Although it was a short period, I learned a lot while working as a development intern.

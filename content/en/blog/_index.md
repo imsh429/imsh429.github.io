@@ -10,8 +10,8 @@ design:
 sections:
   - block: collection
     content:
-      title: '블로그' 
-      text: 일상을 기록합니다.
+      title: 'Blog' 
+      text: Recording daily life.
       count: 0
       filters:
         folders: [blog]        

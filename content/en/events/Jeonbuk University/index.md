@@ -1,9 +1,9 @@
 ---
-title: 전북대학교 입학
+title: Admitted to Jeonbuk National University
 
-location: 전북대학교
+location: Jeonbuk National University
 
-summary: 전북대학교에 입학.
+summary: Enrolled at Jeonbuk National University.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -35,7 +35,7 @@ slides: ""
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 ---
-**전북대학교에 입학했습니다.** 
+**I enrolled at Jeonbuk National University.** 
 
-코로나 바이러스로 인해 대면수업은 하지 못했지만 비대면으로 수업을 진행했습니다.
+Due to COVID-19, we couldn't have in-person classes, but they were conducted remotely.
 

@@ -1,9 +1,9 @@
 ---
-title: 컴퓨터인공지능학부로 전과
+title: Transferred to the Department of Computer Science & Artificial Intelligence
 
-location: 전북대학교 컴퓨터인공지능학부
+location: Department of Computer Science & Artificial Intelligence, Jeonbuk National University
 
-summary: 컴퓨터인공지능학부로 전과했습니다.
+summary: I transferred to the Department of Computer Science & Artificial Intelligence.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -35,7 +35,7 @@ slides: ""
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 ---
-**컴퓨터인공지능학부로 전과 성공했습니다.** 
+**I successfully transferred to the Department of Computer Science & Artificial Intelligence.** 
 
-길고 긴 휴학을 마치고 본격적인 컴퓨터 관련 공부를 해보고 싶어 컴퓨터인공지능학부로 전과했습니다.
+After a long leave of absence, I transferred to the Department of Computer Science & Artificial Intelligence because I wanted to start studying computer-related fields in earnest.
 

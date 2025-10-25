@@ -11,7 +11,7 @@ sections:
   - block: collection
     content:
       title: 'Events' 
-      text: 새로운 소식을 알립니다.
+      text: Announcing new updates.
       count: 0
       filters:
         folders: [events]        

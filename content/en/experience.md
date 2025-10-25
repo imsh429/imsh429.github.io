@@ -33,7 +33,7 @@ sections:
     content:
       title: Certifications
       text: |
-        - **TOEIC** - 915점
+        - **TOEIC** - 915
       design:
         columns: "1"
   - block: resume-awards

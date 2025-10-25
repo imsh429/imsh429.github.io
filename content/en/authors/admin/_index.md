@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 신서현
+title: Shin Seohyeon
 
 # Name pronunciation (optional)
 name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: 신
-last_name: 서현
+first_name: Shin
+last_name: Seohyeon
 
 # Pronouns (optional)
 # pronouns: he/him
@@ -23,11 +23,11 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: 백엔드 개발자
+role: Junior Backend Developer
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: 전북대학교 컴퓨터인공지능학부
+  - name: Department of Computer Science & Artificial Intelligence (Jeonbuk National University)
     url: https://csai.jbnu.ac.kr/csai/index.do
 
 # Social network links
@@ -45,35 +45,32 @@ profiles:
     label: Discord
 
 interests:
-  - 백엔드 개발
-  - 인공지능(AI)
-  - 인프라(클라우드, 서버 운영)
-  - 소프트웨어 엔지니어링
+  - Backend Development
+  - Artificial Intelligence (AI)
+  - Infrastructure (Cloud, Server Operations)
+  - Software Engineering
 
 education:
-  - area: 컴퓨터인공지능학부
-    institution: 전북대학교
-    stidy_type: 학사 과정 (재학 중)
+  - area: Department of Computer Science & Artificial Intelligence
+    institution: Jeonbuk National University
+    stidy_type: Bachelor's Degree (In Progress)
     date_start: 2020-03-01
     date_end: ''
     summary: |
-      전북대학교 컴퓨터인공지능학부에서 인공지능, 소프트웨어 공학,
-      데이터베이스, 운영체제, 네트워크 등 컴퓨터공학 전반을 학습하고 있습니다.  
-      특히 백엔드 개발과 AI 융합 분야에 관심을 두고, 프로젝트와 연구 활동을 이어가고 있습니다.
+      Studying comprehensive computer science fundamentals, including Artificial Intelligence, Software Engineering, Databases, Operating Systems, and Networks. Actively pursuing projects and research with a strong focus on backend development and AI convergence.
     #button:
       #text: 'Read Thesis'
       #url: 'https://example.com/thesis.pdf'
 
 work:
-  - position: 직무체험 개발 인턴
-    company_name: 케이테크
+  - position: Software Development Intern
+    company_name: K-Tech
     #company_url: 'https://openai.com/'
     company_logo: ''
     date_start: 2025-06-30
     date_end: 2025-08-14
     summary: |
-      교육 플랫폼 제작 프로젝트에 참여하여 기획 단계부터 기능 구현까지 경험하였습니다. 
-      사용자 관리, 학습 콘텐츠 관리 등 핵심 기능을 개발하며 실무 환경에서의 백엔드 개발 역량을 쌓았습니다.
+      Participated in an educational platform project, gaining experience from the planning stage to feature implementation. Developed core functionalities, such as user management and learning content management, building practical backend development skills in a professional environment.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -106,16 +103,13 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: 2025 JBNU SW·AI 경진대회
+  - title: 2025 JBNU SW·AI Competition
     # url: https://neurips.cc/
     date: '2025-06-02'
-    awarder: 전북대학교
+    awarder: Jeonbuk National University
     icon: hero/trophy
     summary: |
-      생성형 AI(LLM)과 인간: 텍스트 판별 챌린지에서 수상하였습니다.
+      Received an award in the "Generative AI (LLM) vs. Human: Text Discrimination Challenge."
 ---
 
-안녕하세요. 저는 전북대학교 컴퓨터인공지능학부에서 공부하며 **백엔드 개발자**로 성장하기 위해 노력하고 있습니다.  
-서버 및 데이터베이스 설계, API 구축, 클라우드 인프라에 관심이 많으며,  
-AI 기술을 실제 서비스와 융합해 가치 있는 솔루션을 만드는 것을 목표로 하고 있습니다.  
-끊임없는 학습을 통해 **신뢰할 수 있는 백엔드 엔지니어**로 나아가겠습니다.
+"I am a student at Jeonbuk National University's Department of Computer Science & Artificial Intelligence, striving to become a Backend Developer. I have a strong interest in server and database design, API development, and cloud infrastructure. My goal is to build valuable solutions by integrating AI technology into real-world services. Through continuous learning, I am committed to becoming a reliable backend engineer."
