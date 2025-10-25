@@ -10,7 +10,7 @@ design:
 sections:
   - block: collection
     content:
-      title: 'Events' 
+      title: '소식' 
       text: 새로운 소식을 알립니다.
       count: 0
       filters:

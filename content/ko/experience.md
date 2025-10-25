@@ -20,25 +20,25 @@ sections:
       is_education_first: true
   - block: resume-languages
     content:
-      title: Languages
+      title: 언어
       username: admin
   - block: resume-skills
     content:
-      title: Skills
+      title: 기술
       username: admin
     design:
       show_skill_percentage: false
   - block: markdown
     id: certifications
     content:
-      title: Certifications
+      title: 자격증
       text: |
         - **TOEIC** - 915점
       design:
         columns: "1"
   - block: resume-awards
     content:
-      title: Awards
+      title: 수상내역
       username: admin
   
 ---
