@@ -1,14 +1,8 @@
 # 신서현 | 포트폴리오
 
 <p align="center">
-  <a href="https://imsh429.github.io/" target="_blank">
-    <img src=".github/preview.webp" alt="Portfolio Screenshot" />
-  </a>
-</p>
-
-<p align="center">
   안녕하세요. 백엔드 개발자로 성장하고 있는 신서현입니다.<br/>
-  이 레포지토리는 저의 개인 포트폴리오 웹사이트의 소스코드입니다.
+  이 리포지토리는 저의 개인 포트폴리오 웹사이트의 소스코드입니다.
 </p>
 
 <p align="center">
