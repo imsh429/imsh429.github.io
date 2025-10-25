@@ -1,7 +1,7 @@
 {{/* Block: github.imsh429.banner */}}
 
 {{/* 우선 content 쪽에서 넘어온 값들을 읽어온다 */}}
-{{ $img := or .block.content.image .content.image | default "/media/banner1.jpg" }}
+{{ $img := or .block.content.image .content.image | default "/media/banner3.jpg" }}
 {{ $alt := or .block.content.alt   .content.alt   | default "Banner" }}
 
 {{ $overlay := or .block.content.overlay_opacity .content.overlay_opacity | default "0.0" }}
