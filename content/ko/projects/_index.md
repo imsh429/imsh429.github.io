@@ -7,7 +7,7 @@ design:
   spacing: '0'
 
 sections:
-  - block: github.imsh429.banner
+  - block: github.imsh429.banner_pj
     content:
       image: "/media/banner1.jpg"
       alt: "Projects banner"
