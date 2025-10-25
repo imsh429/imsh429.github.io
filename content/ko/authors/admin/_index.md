@@ -23,7 +23,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: 백엔드 개발자
+role: 주니어 백엔드 개발자
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
