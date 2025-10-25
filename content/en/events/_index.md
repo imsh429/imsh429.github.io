@@ -1,13 +1,27 @@
 ---
-title: Recent & Upcoming Talks
-cms_exclude: true
-#url: talk
+title: Events
+date: 2025-10-17
+type: landing
 
 # View
-view: card
+design:
+  spacing: '0'
 
-# Optional cover image (relative to `assets/media/` folder).
-image:
-  caption: ''
-  filename: ''
+sections:
+  - block: collection
+    content:
+      title: 'Events' 
+      text: 새로운 소식을 알립니다.
+      count: 0
+      filters:
+        folders: [events]        
+      #sort_by: "Date"
+      #sort_ascending: false
+    design:
+      view: card 
+      fill_image: false 
+      columns: 3
+      show_date: true
+      show_read_time: false
+      show_read_more: false
 ---
