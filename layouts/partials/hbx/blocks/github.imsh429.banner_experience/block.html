@@ -1,0 +1,28 @@
+{{/* Block: github.imsh429.banner */}}
+
+{{/* 우선 content 쪽에서 넘어온 값들을 읽어온다 */}}
+{{ $img := or .block.content.image .content.image | default "/media/banner1.jpg" }}
+{{ $alt := or .block.content.alt   .content.alt   | default "Banner" }}
+
+{{ $overlay := or .block.content.overlay_opacity .content.overlay_opacity | default "0.0" }}
+{{ $hBase   := or .block.design.height.base      .design.height.base      | default "14vh" }}
+{{ $hMd     := or .block.design.height.md        .design.height.md        | default "18vh" }}
+
+<div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen !mt-0 !pt-0 !mb-0 !pb-0">
+  <section class="relative w-full overflow-hidden transform -translate-y-px !m-0 !p-0"
+           style="height:{{ $hBase }};">
+    <img
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      src="{{ $img }}"
+      alt="{{ $alt }}"
+      loading="eager"
+      decoding="async"
+    >
+
+    {{ if ne $overlay "0.0" }}
+      <div class="absolute inset-0 pointer-events-none"
+           style="background-color: rgba(0,0,0,{{ $overlay }});">
+      </div>
+    {{ end }}
+  </section>
+</div>

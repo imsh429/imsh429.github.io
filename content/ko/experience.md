@@ -10,9 +10,9 @@ design:
 
 # Page sections
 sections:
-  - block: github.imsh429.banner_pj
+  - block: github.imsh429.banner_experience
     content:
-      image: "/media/banner1.jpg"
+      image: "/media/banner3.jpg"
       alt: "Projects banner"
       overlay_opacity: "0.2"   # 배경 어둡게 안 하고 싶으면 0.0
     design:
