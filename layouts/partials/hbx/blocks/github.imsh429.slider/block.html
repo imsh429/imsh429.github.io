@@ -1,15 +1,27 @@
-{{/* Block: github.imsh429.slider (Tailwind + Swiper, fixed 3 slides) */}}
-
-{{/* 고정 슬라이드 (이미지/텍스트 여기서 직접 수정) */}}
-{{ $slides := slice
-  (dict "image" "/media/slide1.jpg" "title" "앞으로의 계획 및 목표" "subtitle" "")
-  (dict "image" "/media/slide2.jpg" "title" "심화 학습" "subtitle" "꾸준한 학습과 실습으로 기술 스택을 심화하고, 프로젝트로 성과를 만듭니다.")
-  (dict "image" "/media/slide3.jpg" "title" "대회·해커톤 참가" "subtitle" "팀 협업으로 문제를 해결하며 실전 경험과 네트워킹을 확장합니다.")
-}}
+{{/* Block: github.imsh429.slider (Tailwind + Swiper, i18n aware) */}}
 
 {{ $height := "70vh" }}
 {{ $autoplay := 2500 }}
 {{ $speed := 500 }}
+
+{{/* scratch 객체 생성 (슬라이드 목록을 저장할 임시 저장소) */}}
+{{ $scratch := newScratch }}
+
+{{ if eq .Site.Language.Lang "ko" }}
+  {{ $scratch.Set "slides" (slice
+    (dict "image" "/media/slide1.jpg" "title" "앞으로의 계획 및 목표" "subtitle" "")
+    (dict "image" "/media/slide2.jpg" "title" "심화 학습" "subtitle" "꾸준한 학습과 실습으로 기술 스택을 심화하고, 프로젝트로 성과를 만듭니다.")
+    (dict "image" "/media/slide3.jpg" "title" "대회·해커톤 참가" "subtitle" "팀 협업으로 문제를 해결하며 실전 경험과 네트워킹을 확장합니다.")
+  ) }}
+{{ else }}
+  {{ $scratch.Set "slides" (slice
+    (dict "image" "/media/slide1.jpg" "title" "Future Goals & Direction" "subtitle" "")
+    (dict "image" "/media/slide2.jpg" "title" "Deepening My Skills" "subtitle" "I continuously study, build real projects, and turn knowledge into results.")
+    (dict "image" "/media/slide3.jpg" "title" "Competitions & Hackathons" "subtitle" "Teamwork under pressure builds real-world problem solving and network.")
+  ) }}
+{{ end }}
+
+{{ $slides := $scratch.Get "slides" }}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
@@ -19,13 +31,13 @@
       {{ range $i, $s := $slides }}
         <div class="swiper-slide relative">
           <img src="{{ $s.image }}" alt="{{ $s.title }}" class="w-full h-full object-cover">
-          <!-- 투명도 레이어 -->
           <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
-          <!-- 텍스트 오버레이 -->
           <div class="absolute inset-0 flex items-center justify-center text-center p-6">
             <div>
               <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3">{{ $s.title }}</h2>
-              {{ with $s.subtitle }}<p class="text-white/90 text-lg">{{ . }}</p>{{ end }}
+              {{ with $s.subtitle }}
+                <p class="text-white/90 text-lg">{{ . }}</p>
+              {{ end }}
             </div>
           </div>
         </div>
