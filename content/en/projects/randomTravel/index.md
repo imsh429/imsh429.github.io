@@ -17,6 +17,8 @@ tags:
   - TypeScript
 ---
 
+<p style="text-align:justify;">
 From destination recommendations to optimal route generation. Developed a Spring Boot-based travel recommendation service by integrating the GPT and Kakao API.
+</p>
 
 <!--more-->

@@ -13,6 +13,8 @@ tags:
   - Backend
 ---
 
+<p style="text-align:justify;">
 Implemented a backend service that crawls job posting data and provides it to users. This project includes various features such as user authentication, job posting management, application processing, and bookmarks.
+</p>
 
 <!--more-->

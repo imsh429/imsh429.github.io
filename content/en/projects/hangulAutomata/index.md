@@ -12,6 +12,8 @@ tags:
   #- Markdown
 ---
 
+<p style="text-align:justify;">
 Implemented an automaton in Python that replicates the Hangul input method. The process was designed in code to generate complete Hangul characters by combining initial consonants (Choseong), medial vowels (Jungseong), and final consonants (Jongseong).
+</p>
 
 <!--more-->

@@ -12,6 +12,8 @@ tags:
   #- Markdown
 ---
 
+<p style="text-align:justify;">
 A streaming application inspired by Netflix, allowing users to explore movies, add them to a wishlist, and seamlessly log in or register via an authentication system. It was developed utilizing dynamic UI components, infinite scroll, and LocalStorage management.
+</p>
 
 <!--more-->

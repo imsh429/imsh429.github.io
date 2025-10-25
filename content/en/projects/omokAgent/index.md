@@ -14,6 +14,8 @@ tags:
   - Omok
 ---
 
+<p style="text-align:justify;">
 Developed a search-based agent capable of winning at the game of Omok. It was implemented to make efficient move selections by applying a game tree and the Alpha-Beta Pruning algorithm.
+</p>
 
 <!--more-->

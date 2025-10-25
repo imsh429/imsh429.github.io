@@ -12,6 +12,8 @@ tags:
   #- Markdown
 ---
 
+<p style="text-align:justify;">
 I implemented a BPE (Byte Pair Encoding) based tokenizer in Python for subword-level natural language processing. It is designed to learn merge rules using a corpus as input data and then apply these learned rules to break words down into subword units.
+</p>
 
 <!--more-->
