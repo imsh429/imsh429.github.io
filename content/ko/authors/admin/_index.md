@@ -13,8 +13,8 @@ last_name: 서현
 # pronouns: he/him
 
 # Status emoji
-status:
-  icon: 🐰
+#status:
+#  icon: 🐰
 
 # Is this the primary user of the site?
 superuser: true
@@ -23,7 +23,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: 주니어 백엔드 개발자
+#role: 주니어 백엔드 개발자
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
