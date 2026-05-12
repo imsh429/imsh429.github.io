@@ -36,7 +36,7 @@ sections:
       username: admin
   - block: resume-skills
     content:
-      title: 기술
+      title: SKILLS
       username: admin
     design:
       show_skill_percentage: false
@@ -46,6 +46,8 @@ sections:
       title: 자격증
       text: |
         - **TOEIC** - 915점
+        - **TOEIC-SPEAKING** - IH
+        - **SQLD**
       design:
         columns: "1"
   - block: resume-awards

@@ -14,8 +14,7 @@ links:
     url: uploads/final_report.pdf
 tags:
   - Python
-  - NLP
-  - AI
+  - NLP/AI
   - AWS
   - DevOps
   - Main
