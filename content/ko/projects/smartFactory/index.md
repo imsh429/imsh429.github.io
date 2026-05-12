@@ -7,6 +7,8 @@ links:
   - name: Smart-Factory-Project
     icon: brands/github
     url: https://github.com/imsh429/Smart-Factory-Project.git
+  - name: 발표 자료
+    url: uploads/cloud_computing.pdf
 tags:
   - Cloud-Native
   - Serverless

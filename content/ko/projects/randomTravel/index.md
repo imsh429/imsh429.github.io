@@ -10,6 +10,8 @@ links:
   - name: Backend
     icon: brands/github
     url: https://github.com/imsh429/random-trip-backend.git
+  - name: 발표 자료
+    url: uploads/random_trip.pdf
 tags:
   - Full-Stack
   - Generative-AI(GPT API)

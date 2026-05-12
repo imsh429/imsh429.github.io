@@ -10,6 +10,8 @@ links:
   - name: Backend
     icon: brands/github
     url: https://github.com/RiskFinderTeam/risk-finder-be
+  - name: 발표 자료
+    url: uploads/final_report.pdf
 tags:
   - Python
   - NLP
