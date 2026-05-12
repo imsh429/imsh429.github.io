@@ -12,6 +12,7 @@ tags:
   - Game AI
   - Alpha-Beta Pruning
   - Omok
+  - AI
 ---
 
 <p style="text-align:justify;">

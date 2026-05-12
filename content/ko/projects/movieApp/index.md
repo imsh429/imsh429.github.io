@@ -8,6 +8,7 @@ links:
     url: https://github.com/imsh429/netflix-project.git
 tags: 
   - Vue
+  - Side
   #- NLP
   #- Markdown
 ---

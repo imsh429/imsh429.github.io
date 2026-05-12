@@ -9,6 +9,7 @@ links:
 tags:
   - Python
   - NLP
+  - AI
   #- Markdown
 ---
 
