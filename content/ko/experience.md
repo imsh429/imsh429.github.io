@@ -47,6 +47,7 @@ sections:
       text: |
         - **TOEIC** - 915점
         - **TOEIC-SPEAKING** - IH
+        - **정보처리기사**
         - **SQLD**
       design:
         columns: "1"
