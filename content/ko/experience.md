@@ -45,7 +45,7 @@ sections:
     content:
       title: 자격증
       text: |
-        - **TOEIC** - 915점
+        - **TOEIC** - 920
         - **TOEIC-SPEAKING** - IH
         - **정보처리기사**
         - **SQLD**
