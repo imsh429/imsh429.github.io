@@ -6,7 +6,7 @@ featured: true
 links:
   - name: Backend
     icon: brands/github
-    url: https://github.com/imsh429/random-trip-backend.git
+    url: https://github.com/imsh429/jobPostingApp-backend.git
 tags:
   - Python
   - Flask

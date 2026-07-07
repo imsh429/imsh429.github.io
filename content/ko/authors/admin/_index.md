@@ -76,7 +76,7 @@ work:
       체크리스트 기반의 기능 테스트를 통해 UI 오류 및 버그를 조기에 발견하여 제품의 완성도를 높이는 데 기여하였습니다. 
       또한, 사용자 관점에서 신규 기능 매뉴얼을 업데이트하고 기능 설명서 초안을 작성하는 등 실무 환경에서의 문서화 프로세스를 경험하며 협업 역량을 쌓았습니다.
   - position: 직무체험 개발 인턴
-    #company_name: 케이OO
+    #company_name: 케이테크
     #company_url: 'https://openai.com/'
     company_logo: ''
     date_start: 2025-06-30
